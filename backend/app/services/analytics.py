@@ -174,6 +174,9 @@ class AnalyticsService:
                 buyer_name = self._extract_buyer_name(buyer)
                 if buyer_name:
                     buyers.add(buyer_name)
+                else:
+                    # Fallback to the buyer text itself (if it's already a clean name)
+                    buyers.add(buyer)
             
             # Get amount - use structured field if available, otherwise extract from all_cells (backward compatibility)
             amount = tender.get("amount")
@@ -230,13 +233,14 @@ class AnalyticsService:
             return None
         
         # Look for pattern: შემსყიდველი: <name>
-        pattern = r'შემსყიდველი:\s*<strong>([^<]+)</strong>'
+        pattern = r'შემსყიდველი\s*[:\t]\s*<strong>([^<]+)</strong>'
         match = re.search(pattern, text)
         if match:
             return match.group(1).strip()
         
-        # Alternative: look for text after "შემსყიდველი:"
-        pattern = r'შემსყიდველი:\s*([^\n]+)'
+        # Alternative: look for text after "შემსყიდველი" (colon or tab or multi-space)
+        # Use regex similar to detailed_scraper to avoid false positives
+        pattern = r'შემსყიდველი(?:[:\t]|[ \t]{2,})\s*([^\n]+)'
         match = re.search(pattern, text)
         if match:
             name = match.group(1).strip()
