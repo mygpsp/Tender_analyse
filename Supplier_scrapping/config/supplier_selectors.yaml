@@ -1,0 +1,51 @@
+---
+# Supplier Scraper Selectors Configuration
+
+# Base URL
+base_url: "http://tenders.procurement.gov.ge/public/?go"
+
+# Navigation selectors
+navigation:
+  users_button: "button#btn_org"
+  suppliers_tab: "button#b3"
+
+# Supplier list selectors
+supplier_list:
+  table_container: "table#list_orgs"
+  table_rows: "table#list_orgs tbody tr"
+  supplier_name_cell: "td:nth-child(1) span"
+  registration_date_cell: "td:nth-child(2)"
+  type_cell: "td:nth-child(3)"
+  
+# Pagination selectors
+pagination:
+  next_button: "#btn_next"
+  prev_button: "#btn_prev"
+  last_button: "#btn_last"
+  page_info: "div.pagination"
+
+# Profile modal selectors
+modal:
+  dialog: "div[role='dialog'], div.ui-dialog"
+  content: "div.ui-dialog-content"
+  close_button: "button:has-text('დახურვა'), a.ui-dialog-titlebar-close"
+  title: "span.ui-dialog-title"
+  
+# Profile field selectors (using XPath patterns)
+profile_fields:
+  supplier_type: "//td[contains(text(), 'მომწოდებელი')]/following-sibling::td"
+  identification_code: "//td[contains(text(), 'საიდენტიფიკაციო კოდი')]/following-sibling::td"
+  country: "//td[contains(text(), 'ქვეყანა')]/following-sibling::td"
+  city: "//td[contains(text(), 'ქალაქი/დაბა/სოფელი')]/following-sibling::td"
+  address: "//td[contains(text(), 'მისამართი')]/following-sibling::td"
+  phone: "//td[contains(text(), 'ტელეფონი')]/following-sibling::td"
+  fax: "//td[contains(text(), 'ფაქსი')]/following-sibling::td"
+  email: "//td[contains(text(), 'ელ-ფოსტა')]/following-sibling::td"
+  website: "//td[contains(text(), 'ვებ-გვერდი')]/following-sibling::td"
+
+# Timing configuration
+timing:
+  page_load_timeout: 30000
+  modal_load_timeout: 5000
+  between_clicks_ms: 1000
+  between_pages_ms: 2000

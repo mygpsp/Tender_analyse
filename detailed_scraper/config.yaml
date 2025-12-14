@@ -1,0 +1,20 @@
+base_url: "https://tenders.procurement.gov.ge/public/?lang=ge"
+selectors:
+  # Search/input selectors
+  tender_number_input: "#app_reg_id"  # Tender number search input
+  search_button: "#search_btn"        # Search button
+  
+  # Detail page selectors (to be determined by inspection)
+  detail_panel: "#noticeContent"      # Detail panel selector
+  detail_title: ".noticeTitle"        # Title selector
+  detail_content: ".noticeContent"    # Content selector
+  
+  # Close button
+  close_button: "#closeNotice"
+
+scrape:
+  headless: false
+  page_pause_ms: 1000
+  output_path: "data/detailed_tenders.jsonl"
+  max_retries: 3
+

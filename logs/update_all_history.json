@@ -1,0 +1,768 @@
+[
+  {
+    "timestamp": "2025-12-10T20:56:52.091861",
+    "mode": "main_only",
+    "dry_run": false,
+    "results": [
+      {
+        "tender_type": "CON",
+        "name": "CON (Automotive Transport)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T20:56:52.092305",
+        "metrics": {
+          "total_active_rechecked": 1238,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 2248,
+          "errors": []
+        },
+        "end_time": "2025-12-10T20:56:54.663390"
+      },
+      {
+        "tender_type": "NAT",
+        "name": "NAT (National)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T20:56:54.663667",
+        "metrics": {
+          "total_active_rechecked": 2145,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 8540,
+          "errors": []
+        },
+        "end_time": "2025-12-10T20:57:01.538089"
+      },
+      {
+        "tender_type": "SPA",
+        "name": "SPA (Simplified)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T20:57:01.538449",
+        "metrics": {
+          "total_active_rechecked": 102,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 438,
+          "errors": []
+        },
+        "end_time": "2025-12-10T20:57:01.819818"
+      }
+    ],
+    "duration_seconds": 9.728839
+  },
+  {
+    "timestamp": "2025-12-10T21:17:45.292707",
+    "mode": "main_only",
+    "dry_run": false,
+    "results": [
+      {
+        "tender_type": "CON",
+        "name": "CON (Construction/Automotive)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T21:17:45.294069",
+        "metrics": {
+          "total_active_rechecked": 1238,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 2248,
+          "errors": []
+        },
+        "end_time": "2025-12-10T21:17:48.511667"
+      },
+      {
+        "tender_type": "NAT",
+        "name": "NAT (National)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T21:17:48.511958",
+        "metrics": {
+          "total_active_rechecked": 2145,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 8540,
+          "errors": []
+        },
+        "end_time": "2025-12-10T21:17:55.136357"
+      },
+      {
+        "tender_type": "SPA",
+        "name": "SPA (Simplified)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T21:17:55.136657",
+        "metrics": {
+          "total_active_rechecked": 102,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 438,
+          "errors": []
+        },
+        "end_time": "2025-12-10T21:17:55.427570"
+      },
+      {
+        "tender_type": "CNT",
+        "name": "CNT (Contract)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T21:17:55.427843",
+        "metrics": {
+          "total_active_rechecked": 0,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 0,
+          "errors": []
+        },
+        "end_time": "2025-12-10T21:17:55.429779"
+      },
+      {
+        "tender_type": "MEP",
+        "name": "MEP (Mechanical/Electrical/Plumbing)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T21:17:55.429928",
+        "metrics": {
+          "total_active_rechecked": 0,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 0,
+          "errors": []
+        },
+        "end_time": "2025-12-10T21:17:55.431621"
+      },
+      {
+        "tender_type": "DAP",
+        "name": "DAP (Direct Award)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T21:17:55.431765",
+        "metrics": {
+          "total_active_rechecked": 0,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 0,
+          "errors": []
+        },
+        "end_time": "2025-12-10T21:17:55.434081"
+      },
+      {
+        "tender_type": "TEP",
+        "name": "TEP (Technical)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T21:17:55.434281",
+        "metrics": {
+          "total_active_rechecked": 0,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 0,
+          "errors": []
+        },
+        "end_time": "2025-12-10T21:17:55.436168"
+      },
+      {
+        "tender_type": "GEO",
+        "name": "GEO (Georgian)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T21:17:55.436295",
+        "metrics": {
+          "total_active_rechecked": 68,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 242,
+          "errors": []
+        },
+        "end_time": "2025-12-10T21:17:55.761650"
+      },
+      {
+        "tender_type": "DEP",
+        "name": "DEP (Department)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T21:17:55.761869",
+        "metrics": {
+          "total_active_rechecked": 10,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 51,
+          "errors": []
+        },
+        "end_time": "2025-12-10T21:17:55.803126"
+      },
+      {
+        "tender_type": "GRA",
+        "name": "GRA (Grant)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T21:17:55.803377",
+        "metrics": {
+          "total_active_rechecked": 0,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 0,
+          "errors": []
+        },
+        "end_time": "2025-12-10T21:17:55.806195"
+      }
+    ],
+    "duration_seconds": 10.515163
+  },
+  {
+    "timestamp": "2025-12-10T21:30:04.072086",
+    "mode": "main_only",
+    "dry_run": false,
+    "results": [
+      {
+        "tender_type": "CON",
+        "name": "CON (Construction/Automotive)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T21:30:04.073006",
+        "metrics": {
+          "total_active_rechecked": 1238,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 2248,
+          "errors": []
+        },
+        "end_time": "2025-12-10T21:30:25.764943"
+      },
+      {
+        "tender_type": "NAT",
+        "name": "NAT (National)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T21:30:25.765267",
+        "metrics": {
+          "total_active_rechecked": 2145,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 8540,
+          "errors": [
+            "Scraper error: sequence item 11: expected str instance, NoneType found"
+          ]
+        },
+        "end_time": "2025-12-10T21:30:31.994335"
+      },
+      {
+        "tender_type": "SPA",
+        "name": "SPA (Simplified)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T21:30:31.994659",
+        "metrics": {
+          "total_active_rechecked": 102,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 438,
+          "errors": [
+            "Scraper error: sequence item 11: expected str instance, NoneType found"
+          ]
+        },
+        "end_time": "2025-12-10T21:30:32.246651"
+      },
+      {
+        "tender_type": "CNT",
+        "name": "CNT (Contract)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T21:30:32.246968",
+        "metrics": {
+          "total_active_rechecked": 0,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 0,
+          "errors": [
+            "Scraper error: sequence item 9: expected str instance, NoneType found"
+          ]
+        },
+        "end_time": "2025-12-10T21:30:32.250482"
+      },
+      {
+        "tender_type": "MEP",
+        "name": "MEP (Mechanical/Electrical/Plumbing)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T21:30:32.250655",
+        "metrics": {
+          "total_active_rechecked": 0,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 0,
+          "errors": [
+            "Scraper error: sequence item 9: expected str instance, NoneType found"
+          ]
+        },
+        "end_time": "2025-12-10T21:30:32.254228"
+      },
+      {
+        "tender_type": "DAP",
+        "name": "DAP (Direct Award)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T21:30:32.254376",
+        "metrics": {
+          "total_active_rechecked": 0,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 0,
+          "errors": [
+            "Scraper error: sequence item 9: expected str instance, NoneType found"
+          ]
+        },
+        "end_time": "2025-12-10T21:30:32.258081"
+      },
+      {
+        "tender_type": "TEP",
+        "name": "TEP (Technical)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T21:30:32.258218",
+        "metrics": {
+          "total_active_rechecked": 0,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 0,
+          "errors": [
+            "Scraper error: sequence item 9: expected str instance, NoneType found"
+          ]
+        },
+        "end_time": "2025-12-10T21:30:32.261707"
+      },
+      {
+        "tender_type": "GEO",
+        "name": "GEO (Georgian)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T21:30:32.261839",
+        "metrics": {
+          "total_active_rechecked": 68,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 242,
+          "errors": [
+            "Scraper error: sequence item 9: expected str instance, NoneType found"
+          ]
+        },
+        "end_time": "2025-12-10T21:30:32.321905"
+      },
+      {
+        "tender_type": "DEP",
+        "name": "DEP (Department)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T21:30:32.322064",
+        "metrics": {
+          "total_active_rechecked": 10,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 51,
+          "errors": [
+            "Scraper error: sequence item 9: expected str instance, NoneType found"
+          ]
+        },
+        "end_time": "2025-12-10T21:30:32.350333"
+      },
+      {
+        "tender_type": "GRA",
+        "name": "GRA (Grant)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T21:30:32.350498",
+        "metrics": {
+          "total_active_rechecked": 0,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 0,
+          "errors": [
+            "Scraper error: sequence item 9: expected str instance, NoneType found"
+          ]
+        },
+        "end_time": "2025-12-10T21:30:32.353054"
+      }
+    ],
+    "duration_seconds": 28.282723
+  },
+  {
+    "timestamp": "2025-12-10T21:32:31.407716",
+    "mode": "main_only",
+    "dry_run": false,
+    "results": [
+      {
+        "tender_type": "NAT",
+        "name": "NAT (National)",
+        "status": "FAILED",
+        "start_time": "2025-12-10T21:32:31.408605",
+        "metrics": {},
+        "error": "'procurement_number'",
+        "end_time": "2025-12-10T21:53:35.257353"
+      }
+    ],
+    "duration_seconds": 1264.00162
+  },
+  {
+    "timestamp": "2025-12-10T22:09:07.844985",
+    "mode": "main_only",
+    "dry_run": false,
+    "results": [
+      {
+        "tender_type": "CON",
+        "name": "CON (Construction/Automotive)",
+        "status": "FAILED",
+        "start_time": "2025-12-10T22:09:07.847644",
+        "metrics": {},
+        "error": "'procurement_number'",
+        "end_time": "2025-12-10T22:09:18.090614"
+      },
+      {
+        "tender_type": "NAT",
+        "name": "NAT (National)",
+        "status": "FAILED",
+        "start_time": "2025-12-10T22:09:18.176957",
+        "metrics": {},
+        "error": "'procurement_number'",
+        "end_time": "2025-12-10T22:25:39.096459"
+      },
+      {
+        "tender_type": "SPA",
+        "name": "SPA (Simplified)",
+        "status": "FAILED",
+        "start_time": "2025-12-10T22:25:39.260458",
+        "metrics": {},
+        "error": "'procurement_number'",
+        "end_time": "2025-12-10T22:26:36.697519"
+      },
+      {
+        "tender_type": "CNT",
+        "name": "CNT (Contract)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T22:26:36.753806",
+        "metrics": {
+          "total_active_rechecked": 0,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 0,
+          "errors": [
+            "Scraper error: sequence item 9: expected str instance, NoneType found"
+          ]
+        },
+        "end_time": "2025-12-10T22:26:36.758564"
+      },
+      {
+        "tender_type": "MEP",
+        "name": "MEP (Mechanical/Electrical/Plumbing)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T22:26:36.758818",
+        "metrics": {
+          "total_active_rechecked": 0,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 0,
+          "errors": [
+            "Scraper error: sequence item 9: expected str instance, NoneType found"
+          ]
+        },
+        "end_time": "2025-12-10T22:26:36.761151"
+      },
+      {
+        "tender_type": "DAP",
+        "name": "DAP (Direct Award)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T22:26:36.761296",
+        "metrics": {
+          "total_active_rechecked": 0,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 0,
+          "errors": [
+            "Scraper error: sequence item 9: expected str instance, NoneType found"
+          ]
+        },
+        "end_time": "2025-12-10T22:26:36.763783"
+      },
+      {
+        "tender_type": "TEP",
+        "name": "TEP (Technical)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T22:26:36.763975",
+        "metrics": {
+          "total_active_rechecked": 0,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 0,
+          "errors": [
+            "Scraper error: sequence item 9: expected str instance, NoneType found"
+          ]
+        },
+        "end_time": "2025-12-10T22:26:36.766836"
+      },
+      {
+        "tender_type": "GEO",
+        "name": "GEO (Georgian)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T22:26:36.767207",
+        "metrics": {
+          "total_active_rechecked": 68,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 242,
+          "errors": [
+            "Scraper error: sequence item 9: expected str instance, NoneType found"
+          ]
+        },
+        "end_time": "2025-12-10T22:26:36.822655"
+      },
+      {
+        "tender_type": "DEP",
+        "name": "DEP (Department)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T22:26:36.822872",
+        "metrics": {
+          "total_active_rechecked": 10,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 51,
+          "errors": [
+            "Scraper error: sequence item 9: expected str instance, NoneType found"
+          ]
+        },
+        "end_time": "2025-12-10T22:26:36.855430"
+      },
+      {
+        "tender_type": "GRA",
+        "name": "GRA (Grant)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-10T22:26:36.855629",
+        "metrics": {
+          "total_active_rechecked": 0,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 0,
+          "errors": [
+            "Scraper error: sequence item 9: expected str instance, NoneType found"
+          ]
+        },
+        "end_time": "2025-12-10T22:26:36.858573"
+      }
+    ],
+    "duration_seconds": 1049.015181
+  },
+  {
+    "timestamp": "2025-12-14T10:34:55.223593",
+    "mode": "main_only",
+    "dry_run": false,
+    "results": [
+      {
+        "tender_type": "CON",
+        "name": "CON (Construction/Automotive)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-14T10:34:55.224828",
+        "metrics": {
+          "total_active_rechecked": 3689,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 56996,
+          "errors": [
+            "Main scraper error: 2025-12-14 10:35:01,007 INFO tender_scraper - Navigating to https://tenders.procurement.gov.ge/public/?lang=ge\n2025-12-14 10:35:02,256 INFO tender_scraper - Applying date filters...\n2025-12-14 10:35:0"
+          ]
+        },
+        "end_time": "2025-12-14T10:35:04.878122"
+      },
+      {
+        "tender_type": "NAT",
+        "name": "NAT (National)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-14T10:35:04.878481",
+        "metrics": {
+          "total_active_rechecked": 4045,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 56266,
+          "errors": [
+            "Main scraper error: 2025-12-14 10:35:10,014 INFO tender_scraper - Navigating to https://tenders.procurement.gov.ge/public/?lang=ge\n2025-12-14 10:35:12,939 INFO tender_scraper - Applying date filters...\n2025-12-14 10:35:1"
+          ]
+        },
+        "end_time": "2025-12-14T10:35:15.450373"
+      },
+      {
+        "tender_type": "SPA",
+        "name": "SPA (Simplified)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-14T10:35:15.450803",
+        "metrics": {
+          "total_active_rechecked": 101,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 438,
+          "errors": [
+            "Main scraper error: 2025-12-14 10:35:19,854 INFO tender_scraper - Navigating to https://tenders.procurement.gov.ge/public/?lang=ge\n2025-12-14 10:35:21,752 INFO tender_scraper - Applying date filters...\n2025-12-14 10:35:2"
+          ]
+        },
+        "end_time": "2025-12-14T10:35:23.044731"
+      },
+      {
+        "tender_type": "CNT",
+        "name": "CNT (Contract)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-14T10:35:23.045111",
+        "metrics": {
+          "total_active_rechecked": 0,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 0,
+          "errors": [
+            "Main scraper error: 2025-12-14 10:35:26,703 INFO tender_scraper - Navigating to https://tenders.procurement.gov.ge/public/?lang=ge\n2025-12-14 10:35:28,256 INFO tender_scraper - Applying date filters...\n2025-12-14 10:35:2"
+          ]
+        },
+        "end_time": "2025-12-14T10:35:29.390630"
+      },
+      {
+        "tender_type": "MEP",
+        "name": "MEP (Mechanical/Electrical/Plumbing)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-14T10:35:29.390798",
+        "metrics": {
+          "total_active_rechecked": 0,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 0,
+          "errors": [
+            "Main scraper error: 2025-12-14 10:35:33,165 INFO tender_scraper - Navigating to https://tenders.procurement.gov.ge/public/?lang=ge\n2025-12-14 10:35:34,622 INFO tender_scraper - Applying date filters...\n2025-12-14 10:35:3"
+          ]
+        },
+        "end_time": "2025-12-14T10:35:35.793313"
+      },
+      {
+        "tender_type": "DAP",
+        "name": "DAP (Direct Award)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-14T10:35:35.793486",
+        "metrics": {
+          "total_active_rechecked": 0,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 0,
+          "errors": [
+            "Main scraper error: 2025-12-14 10:35:39,938 INFO tender_scraper - Navigating to https://tenders.procurement.gov.ge/public/?lang=ge\n2025-12-14 10:35:41,612 INFO tender_scraper - Applying date filters...\n2025-12-14 10:35:4"
+          ]
+        },
+        "end_time": "2025-12-14T10:35:43.013674"
+      },
+      {
+        "tender_type": "TEP",
+        "name": "TEP (Technical)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-14T10:35:43.013859",
+        "metrics": {
+          "total_active_rechecked": 0,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 0,
+          "errors": [
+            "Main scraper error: 2025-12-14 10:35:46,764 INFO tender_scraper - Navigating to https://tenders.procurement.gov.ge/public/?lang=ge\n2025-12-14 10:35:48,883 INFO tender_scraper - Applying date filters...\n2025-12-14 10:35:4"
+          ]
+        },
+        "end_time": "2025-12-14T10:35:50.011834"
+      },
+      {
+        "tender_type": "GEO",
+        "name": "GEO (Georgian)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-14T10:35:50.012024",
+        "metrics": {
+          "total_active_rechecked": 66,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 242,
+          "errors": [
+            "Main scraper error: 2025-12-14 10:35:55,190 INFO tender_scraper - Navigating to https://tenders.procurement.gov.ge/public/?lang=ge\n2025-12-14 10:35:57,218 INFO tender_scraper - Applying date filters...\n2025-12-14 10:35:5"
+          ]
+        },
+        "end_time": "2025-12-14T10:35:58.376497"
+      },
+      {
+        "tender_type": "DEP",
+        "name": "DEP (Department)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-14T10:35:58.376718",
+        "metrics": {
+          "total_active_rechecked": 10,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 51,
+          "errors": [
+            "Main scraper error: 2025-12-14 10:36:02,848 INFO tender_scraper - Navigating to https://tenders.procurement.gov.ge/public/?lang=ge\n2025-12-14 10:36:04,775 INFO tender_scraper - Applying date filters...\n2025-12-14 10:36:0"
+          ]
+        },
+        "end_time": "2025-12-14T10:36:05.889558"
+      },
+      {
+        "tender_type": "GRA",
+        "name": "GRA (Grant)",
+        "status": "SUCCESS",
+        "start_time": "2025-12-14T10:36:05.889747",
+        "metrics": {
+          "total_active_rechecked": 0,
+          "status_changes_detected": 0,
+          "new_tenders_added": 0,
+          "total_tenders": 0,
+          "errors": [
+            "Main scraper error: 2025-12-14 10:36:09,638 INFO tender_scraper - Navigating to https://tenders.procurement.gov.ge/public/?lang=ge\n2025-12-14 10:36:11,132 INFO tender_scraper - Applying date filters...\n2025-12-14 10:36:1"
+          ]
+        },
+        "end_time": "2025-12-14T10:36:12.276997"
+      }
+    ],
+    "duration_seconds": 77.055628
+  },
+  {
+    "timestamp": "2025-12-14T11:21:14.535608",
+    "mode": "main_only",
+    "dry_run": false,
+    "results": [],
+    "duration_seconds": 44.297561
+  },
+  {
+    "timestamp": "2025-12-14T11:25:12.927395",
+    "mode": "main_only",
+    "dry_run": false,
+    "results": [],
+    "duration_seconds": 46.407398
+  },
+  {
+    "timestamp": "2025-12-14T11:34:49.712389",
+    "mode": "detailed",
+    "dry_run": false,
+    "results": [],
+    "duration_seconds": 6.636432
+  },
+  {
+    "timestamp": "2025-12-14T11:46:20.577962",
+    "mode": "main_only",
+    "dry_run": false,
+    "results": [],
+    "duration_seconds": 39.481169
+  },
+  {
+    "timestamp": "2025-12-14T11:52:29.327520",
+    "mode": "main_only",
+    "dry_run": false,
+    "results": [],
+    "duration_seconds": 34.636126
+  },
+  {
+    "timestamp": "2025-12-14T11:57:07.766971",
+    "mode": "detailed",
+    "dry_run": false,
+    "results": [],
+    "duration_seconds": 33.888429
+  },
+  {
+    "timestamp": "2025-12-14T11:57:56.558721",
+    "mode": "detailed",
+    "dry_run": false,
+    "results": [],
+    "duration_seconds": 33.064688
+  },
+  {
+    "timestamp": "2025-12-14T12:00:44.395867",
+    "mode": "detailed",
+    "dry_run": false,
+    "results": [],
+    "duration_seconds": 33.617265
+  },
+  {
+    "timestamp": "2025-12-14T16:41:59.134623",
+    "mode": "detailed",
+    "dry_run": false,
+    "results": [],
+    "duration_seconds": 1702.945592
+  },
+  {
+    "timestamp": "2025-12-14T20:45:43.054947",
+    "mode": "main_only",
+    "dry_run": false,
+    "results": [],
+    "duration_seconds": 469.029994
+  }
+]

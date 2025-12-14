@@ -1,0 +1,19 @@
+base_url: "https://tenders.procurement.gov.ge/public/?lang=ge"
+selectors:
+  date_from: "#app_date_from"
+  date_to: "#app_date_till"
+  date_type: "#app_date_type"
+  search_button: "#search_btn"
+  result_rows: ".noticeRow"
+  detail_link: ".noticeRow .btnMore"
+  detail_panel: "#noticeContent"
+  close_detail: "#closeNotice"
+  next_button: "#btn_next > span.ui-button-icon-primary.ui-icon.ui-icon-seek-next"
+scrape:
+  # YYYY-MM-DD
+  date_from: "2025-12-01"
+  date_to: "2026-12-01"
+  headless: false
+  page_pause_ms: 800
+  max_pages: 0 # 0 = all pages
+  output_path: "main_scrapper/data/tenders.jsonl"

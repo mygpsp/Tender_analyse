@@ -1,0 +1,509 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"><html><head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="robots" content="noindex">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&amp;subset=latin,cyrillic" rel="stylesheet" type="text/css" media="screen">
+        <link rel="stylesheet" type="text/css" href="css/spa.css?k171212" media="screen">
+        <link rel="stylesheet" type="text/css" href="css/spa-ge.css?k221013" media="screen">
+        <link rel="stylesheet" type="text/css" href="css/styles.css?k221013" media="screen">
+        <link rel="stylesheet" type="text/css" href="css/spa_print.css?k221013" media="print">
+        <!--[if IE]>
+			<link rel="stylesheet" type="text/css" href="css/ie-only.css?091210" />
+		<![endif]-->
+
+        <script src="https://connect.facebook.net/en_US/sdk.js?hash=f81fbd1438eebb02fcedd731756c61bd" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="https://connect.facebook.net/en_US/sdk.js"></script><script type="text/javascript" src="library/jquery-1.8.3.min.js"></script>
+        <script type="text/javascript" src="library/jquery-ui-1.9.1.custom.min.js"></script>
+
+        <link href="library/dynatree/skin-vista/ui.dynatree.css" rel="stylesheet" type="text/css" id="skinSheet" media="screen">
+        <script src="library/dynatree/jquery.dynatree.js" type="text/javascript"></script>
+
+        <script type="text/javascript" src="library/jquery.layout.min.js?k221013"></script>
+        <script type="text/javascript" src="library/jquery.ui.datepicker-ge.js"></script>
+        <script type="text/javascript" src="library/jquery.form.js?k221013"></script>
+        <script type="text/javascript" src="library/jquery.validate.js?k291015"></script>
+        <script type="text/javascript" src="library/jquery.metadata.js?k291015"></script>
+        <script type="text/javascript" src="library/jquery.blockUI.js"></script>
+        <script type="text/javascript" src="library/jquery.timer.js"></script>
+        <script type="text/javascript" src="library/autocomplete/autocomplete.min.js"></script>
+        <script type="text/javascript" src="library/countdown/jquery.countdown.min.js"></script>
+        <script type="text/javascript" src="library/countdown/jquery.countdown-ge.js"></script>
+        <script type="text/javascript" src="library/jquery.PrintArea.js?k221013"></script>
+        <script type="text/javascript" src="library/spa.js?k171212"></script>
+        <script type="text/javascript" src="library/spa-ge.js?k221013"></script>
+        <script type="text/javascript" src="library/geokbd.js"></script>
+        <title>სახელმწიფო შესყიდვების სააგენტო</title>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $.ajaxSetup({
+                    cache: true
+                });
+                window.fbAsyncInit = function () {
+                    FB.init({
+                        appId: '133732963496866',
+                        cookie: true,
+                        xfbml: true,
+                        version: 'v10.0'
+                    });
+
+                    FB.AppEvents.logPageView();
+
+                    FB.Event.subscribe('auth.authResponseChange', function (response) {
+                        if (response.status === 'connected') {
+                            FB.api('/me', function (response) {
+                                $.get('library/fblogin.php', response, function (r) {
+                                    $('#btn_today').show();
+                                    $('#btn_ssp').show();
+                                    $('#btn_smp').show();
+                                    $('#btn_splan').show();
+                                    $('#btn_con').show();
+                                    $('#fb_login').attr("disabled", "disabled");
+                                    $('#fb-auth-name').html(response.name);
+                                });
+                            });
+                        }
+                    });
+
+                    FB.Event.subscribe("auth.logout", function () {
+                        $('#fb-auth-name').html('შესვლა');
+                        $('#fb_login').removeAttr("disabled");
+                        $('#btn_today').hide();
+                        $('#btn_ssp').hide();
+                        $('#btn_smp').hide();
+                        $('#btn_splan').hide();
+                        $('#btn_con').hide();
+                    });
+                };
+
+                function SPA_login() {
+                    FB.login(function cb(m) { })
+                }
+
+                (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) {
+                        return;
+                    }
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://connect.facebook.net/en_US/sdk.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+
+                $('#container').layout({
+                    north__resizable: false,
+                    west__resizable: false,
+                    south__resizable: false,
+                    north__size: 64,
+                    west__size: 250,
+                    north__spacing_open: 0,
+                    west__spacing_open: 0,
+                    south__spacing_open: 0
+                });
+                $('#findspa').button({
+                    icons: {
+                        primary: "ui-icon-search"
+                    }
+                });
+                $('#btn_home').button({
+                    text: false,
+                    icons: {
+                        primary: "ui-icon-home"
+                    }
+                }).click(function () {
+                    GoHome();
+                });
+                $('#btn_today').button({
+                    icons: {
+                        primary: "ui-icon-star"
+                    }
+                });
+                $('#btn_ssp').button({
+                    icons: {
+                        primary: "ui-icon-script"
+                    }
+                });
+                $('#btn_smp').button({
+                    icons: {
+                        primary: "ui-icon-gear"
+                    }
+                });
+                $('#btn_splan').button({
+                    icons: {
+                        primary: "ui-icon-script"
+                    }
+                });
+                $('#btn_con').button({
+                    icons: {
+                        primary: "ui-icon-script"
+                    }
+                });
+                $('#btn_org').button({
+                    icons: {
+                        primary: "ui-icon-gear"
+                    }
+                });
+                $('#fb_login').button({
+                    icons: {
+                        primary: "ui-icon-fblogin"
+                    }
+                });
+                $('#btn_exit').button({
+                    icons: {
+                        primary: "ui-icon-power"
+                    }
+                });
+                $('#btn_cpveng').button({
+                    icons: {
+                        primary: "ui-icon-gear"
+                    }
+                });
+                $('#oss').click(function () {
+                    Osess(0);
+                    Guests(0);
+                });
+                var timer = $.timer(function () {
+                    Who();
+                });
+                timer.set({
+                    time: 120000,
+                    autostart: true
+                });
+                var go = eval('');
+                var qep = eval('0');
+                if (go || qep) {
+                    if (qep) {
+                        ShowQep(qep);
+                    } else {
+                        ShowApp(go, '', 0);
+                    }
+                } else {
+                    ShowLastEvents();
+                }
+                Who();
+                GeoKBD.map('search_frm');
+                $("#accordion").accordion({
+                    heightStyle: "fill",
+                    activate: function (event, ui) {
+                        $('#app').html('');
+                        $('#app_list').show();
+                    }
+                });
+            });
+        </script>
+    <style type="text/css" data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0px;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:lucida grande,tahoma,verdana,arial,sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:400;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{0%{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+
+.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0px;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:lucida grande,tahoma,verdana,arial,sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:400;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{0%{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+
+.fb_dialog{background:#525252b3;position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:700;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://connect.facebook.net/rsrc.php/v4/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://connect.facebook.net/rsrc.php/v4/ya/r/3rhSv5V8j3o.gif) #fff no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:#0006;inset:0;min-height:100%;position:absolute;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba),to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:#fff 0 1px 1px -1px inset;color:#fff;font:700 14px Helvetica,sans-serif;text-overflow:ellipsis;text-shadow:rgba(0,30,84,.296875) 0px -1px 0px;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2),to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:700 12px Helvetica,sans-serif;margin:2px -12px;padding:2px 6px 3px;text-shadow:rgba(0,30,84,.296875) 0px -1px 0px}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:700;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://connect.facebook.net/rsrc.php/v4/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4A4A4A;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4A4A4A;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://connect.facebook.net/rsrc.php/v4/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0)}to{transform:rotate(360deg)}}
+
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}
+</style></head>
+
+    <body>
+        <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div>
+        <div id="container" class="ui-layout-container" style="overflow: hidden; position: relative;">
+            <div id="top" class="ui-layout-north ui-layout-pane ui-layout-pane-north" style="position: absolute; margin: 0px; inset: 0px 0px auto; width: auto; z-index: 0; height: 59px; display: block; visibility: visible;">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tbody><tr>
+                        <td style="font-size: 1.2em">
+                            <button type="button" id="btn_home" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only" role="button" aria-disabled="false" title="|"><span class="ui-button-icon-primary ui-icon ui-icon-home"></span><span class="ui-button-text">|</span></button>
+                            <button type="button" id="btn_org" onclick="$(this).blur();$.get('library/controller.php',{action:'org_list'}, function(data) {GoList();$('#app_list').html(data);});" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" role="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-gear"></span><span class="ui-button-text">მომხმარებლები</span></button>
+                            <button type="button" id="btn_ssp" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" role="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-script"></span><span class="ui-button-text">CMR</span></button>
+                            <button type="button" id="btn_con" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" role="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-script"></span><span class="ui-button-text">CON</span></button>
+                            <button type="button" id="btn_smp" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" role="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-gear"></span><span class="ui-button-text">SMP</span></button>
+                            <button type="button" id="btn_splan" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" role="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-script"></span><span class="ui-button-text">ePLAN</span></button>
+                            <button type="button" id="btn_mrs" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" role="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-script"></span><span class="ui-button-text">MRS</span></button>
+                        </td>
+                        <td width="340" align="right">
+                            <a href="http://procurement.gov.ge"><img src="images/spalogo100.png" height="56"></a>
+                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+
+            <div id="leftnav" class="ui-layout-west ui-layout-pane ui-layout-pane-west" style="position: absolute; margin: 0px; inset: 64px auto 23px 0px; height: 621px; z-index: 0; width: 238px; display: block; visibility: visible;">
+
+                <div id="accordion" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
+                    <h3 id="tenders" class="ui-accordion-header ui-helper-reset ui-state-default ui-accordion-header-active ui-state-active ui-corner-top ui-accordion-icons" role="tab" aria-controls="ui-accordion-accordion-panel-0" aria-selected="true" tabindex="0"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>შესყიდვები</h3>
+                    <div style="background-color: rgb(221, 221, 221); display: block; height: 545px; overflow: auto;" class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active" id="ui-accordion-accordion-panel-0" aria-labelledby="tenders" role="tabpanel" aria-expanded="true" aria-hidden="false">
+                        <form name="search_frm" id="search_frm" method="post" action="library/controller.php">
+                            <input type="hidden" name="action" value="search_app" style="">
+                            <input type="hidden" name="app_t" value="0" style="">
+                            <input type="hidden" name="search" style="">
+                            <ul>
+                                <li class="lbl">განცხადების ნომერი</li>
+                                <li><input type="text" style="width: 200px;" id="app_reg_id" name="app_reg_id" maxlength="25"></li>
+                                <li class="lbl">შემსყიდველი <label>(ძებნა მე-3 სიმბოლოდან)</label></li>
+                                <li><input type="hidden" name="app_shems_id" id="app_shems_id" value="0" style=""><input maxlength="200" type="text" style="width: 200px;" name="org_a" id="org_a" autocomplete="off" class="ac_input"></li>
+                                <li class="lbl">მიმწოდებელი <label>(ძებნა მე-3 სიმბოლოდან)</label></li>
+                                <li><input type="hidden" name="app_monac_id" id="app_monac_id" value="0" style=""><input maxlength="200" type="text" style="width: 200px;" name="org_b" id="org_b" autocomplete="off" class="ac_input"></li>
+                                <li class="lbl">მიმწოდებლის სტატუსი</li>
+                                <li class="search-field">
+                                    <select style="width:210px" id="app_particip_status_id" name="app_particip_status_id">
+                                        <option value="0"></option>
+                                        <option value="200">ხელშეკრულება დადებული</option>
+                                        <option value="100">დისკვალიფიცირებული</option>
+                                    </select>
+                                </li>
+                                <li class="lbl">დონორი</li>
+                                <li class="search-field">
+                                    <select style="width:210px" id="app_donor_id" name="app_donor_id">
+                                        <option value="0"></option>
+                                        <option value="100">მსოფლიო ბანკი</option><option value="110">ევროპის რეკონსტრუქციისა და განვითარების ბანკი</option><option value="120">ევროპის საინვესტიციო ბანკი</option><option value="130">აზიის განვითარების ბანკი</option><option value="140">აზიის ინფრასტრუქტურის საინვესტიციო ბანკი</option><option value="150">გერმანიის რეკონსტრუქციის საკრედიტო ბანკი</option><option value="160">ათასწლეულის გამოწვევის ფონდი - საქართველო
+</option><option value="170">იაპონიის საერთაშორისო თანამშრომლობის სააგენტო</option><option value="180">გაერთიანებული ერების ლტოლვილთა უმაღლესი კომისარიატი</option><option value="190">ევროკავშირი</option><option value="195">სოფლის მეურნეობის განვითარების საერთაშორისო ფონდი</option><option value="200">ევროპის საბჭოს განვითარების ბანკი</option><option value="205">სკანდინავიური გარემოს საფინანსო კორპორაცია</option><option value="206">საფრანგეთის
+განვითარების სააგენტო</option><option value="2000">დონორის წესები მთავრობის თანხმობით</option>
+                                    </select>
+                                </li>
+                                <li class="lbl">შესყიდვის სტატუსი</li>
+                                <li><select style="width:210px" id="app_status" name="app_status">
+                                        <option value="0"></option>
+                                        <option value="10">გამოცხადებულია</option><option value="20">წინადადებების მიღება დაწყებულია</option><option value="30">წინადადებების მიღება დასრულებულია</option><option value="40">შერჩევა/შეფასება</option><option value="50">გამარჯვებული გამოვლენილია</option><option value="100">დასრულებულია უარყოფითი შედეგით</option><option value="110">არ შედგა</option><option value="120">შეწყვეტილია</option><option value="130">მიმდინარეობს ხელშეკრულების მომზადება</option><option value="140">ხელშეკრულება დადებულია</option>
+                                    </select></li>
+                                <li class="lbl">ხელშეკრულების სტატუსი</li>
+                                <li class="search-field">
+                                    <select style="width:210px" id="app_agr_status" name="app_agr_status">
+                                        <option value="0"></option>
+                                        <option value="10">მიმდინარე ხელშეკრულება</option><option value="20">შესრულებული ხელშეკრულება</option><option value="30">შეუსრულებელი ხელშეკრულება</option><option value="40">მიმდინარე ხელშეკრულება - საგარანტიო პერიოდი</option>
+                                    </select>
+                                </li>
+                                <li class="lbl">შესყიდვის ტიპი</li>
+                                <li><select style="width:210px" id="app_type" name="app_type">
+                                        <option value="0"></option>
+                                        <option value="9" class="color-0">NAT - ელექტრონული ტენდერი აუქციონის გარეშე</option><option value="2" class="color-0">SPA - ელექტრონული ტენდერი რევერსული აუქციონით</option><option value="4" class="color-0">CON - კონსოლიდირებული ტენდერი</option><option value="6" class="color-0">CNT - კონკურსი</option><option value="11" class="color-0">MEP - ორეტაპიანი ელექტრონული ტენდერი</option><option value="15" class="color-0">DAP - ელექტრონული ტენდერი განსხვავებული წესით</option><option value="16" class="color-0">TEP - ელექტრონული ტენდერი პრეკვალიფიკაციით</option><option value="3" class="color-0">GEO - შესყიდვის ელექტრონული პროცედურა</option><option value="5" class="color-0">DEP - შესყიდვის  ელ. პროცედურა დონორის სახსრებით</option><option value="7" class="color-0">GRA - საგრანტო კონკურსი</option><option value="22" class="color-0">PPP - საჯარო-კერძო თანამშრომლობა/კონცესია</option><option value="20" class="color-0">B2B - კერძო შესყიდვა</option><option value="8" class="color-1">NAT - გამარტივებული ელექტრონული ტენდერი აუქციონის გარეშე</option><option value="1" class="color-1">SPA - გამარტივებული ელექტრონული ტენდერი რევერსული აუქციონით</option><option value="10" class="color-1">MEP - ორეტაპიანი გამარტივებული ელექტრონული ტენდერი</option><option value="14" class="color-1">DAP - გამარტივებული ელექტრონული ტენდერი განსხვავებული წესით</option>
+                                    </select></li>
+                                <li class="lbl">შესყიდვის კატეგორია</li>
+                                <li><select style="width:210px" id="app_basecode" name="app_basecode">
+                                        <option value="0"></option>
+                                        <option value="18864">03100000 - სოფლის მეურნეობისა და ბაღჩეული პროდუქტები </option><option value="18865">03200000 - ბურღულეული, კარტოფილი, ბოსტნეული, ხილი და თხილეული</option><option value="18870">03300000 - მეცხოველეობის პროდუქტები, ნანადირევი და თევზჭერის პროდუქტები </option><option value="18871">03400000 - მეტყევეობისა და ტყეკაფვის პროდუქტები </option><option value="18866">09100000 - საწვავი</option><option value="18867">09200000 - ნავთობი, ქვანახშირი და ნავთობპროდუქტები </option><option value="18868">09300000 - ელექტროენერგია, გათბობა, მზისა და ბირთვული ენერგია </option><option value="18869">14200000 - ქვიშა და თიხა</option><option value="18877">14300000 - ქიმიური და სასუქი მინერალები</option><option value="18878">14400000 - მარილისა და სუფთა ნატრიუმის ქლორიდი</option><option value="18879">14500000 - სამთო მრეწველობასა და კარიერის დამუშავებასთან დაკავშირებული პროდუქტები</option><option value="18880">14600000 - ლითონის მადანი და შენადნობები</option><option value="18881">14700000 - ძირითადი ლითონები </option><option value="18882">14800000 - სხვადასხვა არალითონური მინერალური პროდუქტი</option><option value="18883">14900000 - აღდგენილი მეორადი ნედლეული</option><option value="18884">15100000 - ცხოველური წარმოშობის პროდუქტები, ხორცი და ხორცის პროდუქტები</option><option value="18885">15200000 - მზა და დაკონსერვებული თევზი </option><option value="18886">15300000 - ხილი, ბოსტნეული და მონათესავე პროდუქტები </option><option value="18872">15400000 - ცხოველური ან მცენარეული ზეთები და ცხიმები</option><option value="18873">15500000 - რძის პროდუქტები</option><option value="18874">15600000 - დაფქული მარცვლეული პროდუქტები, სახამებელი და სახამებლის პროდუქტები</option><option value="18875">15700000 - ცხოველის საკვები </option><option value="18876">15800000 - სხვადასხვა საკვები პროდუქტი</option><option value="18887">15900000 - სასმელები, თამბაქო და მონათესავე პროდუქტები</option><option value="18894">16100000 - სასოფლო-სამეურნეო და სატყეო დანიშნულების მანქანა-დანადგარები ნიადაგის მოსამზადებლად ან კულტივირებისათვის</option><option value="18895">16300000 - მოსავლის ასაღები მანქანები</option><option value="18896">16400000 - შესაწამლი მანქანები სოფლის მეურნეობის ან მებაღჩეობისათვის</option><option value="18897">16500000 - ავტომტვირთველი ან თვითმცლელი ტრაილერები და ნახევარტრაილერები სოფლის მეურნეობისათვის </option><option value="18898">16600000 - სპეციალიზებული სასოფლო-სამეურნეო ან სატყეო დანიშნულების მანქანა-დანადგარები </option><option value="18899">16700000 - ტრაქტორები</option><option value="18900">16800000 - სასოფლო-სამეურნეო და სატყეო დანიშნულების მანქანა-დანადგარების ნაწილები</option><option value="18901">18100000 - სამუშაო ტანსაცმელი, სპეცტანსაცმელი და აქსესუარები</option><option value="18902">18200000 - გარედან ჩასაცმელი ტანსაცმელი </option><option value="18903">18300000 - ტანსაცმელი </option><option value="18904">18400000 - სპეციალური ტანსაცმელი და აქსესუარები</option><option value="18888">18500000 - სამკაულები, საათები და მონათესავე ნივთები</option><option value="18889">18600000 - ბეწვეული და ბეწვეულის ნივთები</option><option value="18890">18800000 - ფეხსაცმელი</option><option value="18891">18900000 - საბარგო ნივთები, სასარაჯო ნაკეთობები, ტომრები და ჩანთები </option><option value="18892">19100000 - ტყავი</option><option value="18893">19200000 - საფეიქრო ნაწარმი და დაკავშირებული ნივთები </option><option value="18910">19400000 - ტექსტილის ნართი და ძაფი </option><option value="18911">19500000 - რეზინისა და პლასტმასის მასალები</option><option value="18912">19600000 - ტყავის, ტექსტილის, რეზინისა და პლასტმასის ნარჩენი</option><option value="18913">19700000 - სინთეტიკური რეზინი და ბოჭკოები</option><option value="18914">22100000 - ნაბეჭდი წიგნები, ბროშურები და საინფორმაციო ფურცლები</option><option value="18915">22200000 - გაზეთები, სამეცნიერო ჟურნალები, პერიოდიკა და ჟურნალები</option><option value="18916">22300000 - ღია ბარათები, მისალოცი ბარათები და სხვა ნაბეჭდი მასალა</option><option value="18917">22400000 - მარკები, ჩეკების წიგნაკები, ბანკნოტები, აქციები, სარეკლამო მასალა, კატალოგები და სახელმძღვანელოები</option><option value="18918">22500000 - საბეჭდი ფორმები ან ცილინდრები ან ბეჭდვისას გამოსაყენებელი სხვა საშუალებები </option><option value="18919">22600000 - საღებავი</option><option value="18920">22800000 - ქაღალდის ან მუყაოს სარეგისტრაციო ჟურნალები/წიგნები, საბუღალტრო წიგნები, ფორმები და სხვა ნაბეჭდი საკანცელარიო ნივთები</option><option value="18921">22900000 - სხვადასხვა ნაბეჭდი მასალა</option><option value="18922">24100000 - აირები</option><option value="18923">24200000 - საღებავები და პიგმენტები</option><option value="18905">24300000 - ძირითადი არაორგანული და ორგანული ქიმიკატები</option><option value="18906">24400000 - სასუქები და ნიტროგენული ნაერთები</option><option value="18907">24500000 - პლასტმასი პირველადი ფორმით</option><option value="18908">24600000 - ფეთქებადი ნივთიერებები</option><option value="18909">24900000 - სუფთა ქიმიკატები და სხვადასხვა ქიმიური ნივთიერებების პროდუქტები</option><option value="18925">30100000 - საოფისე მანქანა-დანადგარები, აღჭურვილობა და საკანცელარიო ნივთები, კომპიუტერების, პრინტერებისა და ავეჯის გარდა</option><option value="18924">30200000 - კომპიუტერული მოწყობილობები და აქსესუარები </option><option value="18931">31100000 - ელექტროძრავები, გენერატორები და ტრანსფორმატორები</option><option value="18932">31200000 - ელექტროენერგიის გამანაწილებელი და საკონტროლო აპარატურა</option><option value="18926">31300000 - იზოლირებული მავთული და კაბელი</option><option value="18927">31400000 - აკუმულატორები, დენის პირველადი წყაროები და პირველადი ელემენტები</option><option value="18928">31500000 - გასანათებელი მოწყობილობები და ელექტრონათურები</option><option value="18929">31600000 - ელექტრომოწყობილობები და აპარატურა</option><option value="18930">31700000 - ელექტრონული, ელექტრომექანიკური და ელექტროტექნიკური აქსესუარები </option><option value="18933">32200000 - რადიოტელეფონიის, რადიოსატელეგრაფო, რადიო- და ტელემაუწყებლობის აპარატურა</option><option value="18935">32300000 - ტელე- და რადიოსიგნალის მიმღებები და აუდიო- ან ვიდეოგამოსახულების ჩამწერი ან აღწარმოების აპარატურა </option><option value="18936">32400000 - ქსელები</option><option value="18937">32500000 - სატელეკომუნიკაციო მოწყობილობები და აქსესუარები</option><option value="18934">33100000 - სამედიცინო მოწყობილობები</option><option value="18938">33600000 - ფარმაცევტული პროდუქტები</option><option value="18939">33700000 - პირადი ჰიგიენის საშუალებები</option><option value="18942">33900000 - აუტოფსიისა და მორგისთვის საჭირო მოწყობილობები და აქსესუარები</option><option value="18940">34100000 - ავტოსატრანსპორტო საშუალებები</option><option value="18941">34200000 - სატრანსპორტო საშუალებების ძარები, მისაბმელები ან ნახევრადმისაბმელები</option><option value="18944">34300000 - ნაწილები და აქსესუარები სატრანსპორტო საშუალებებისა და მათი ძრავებისათვის</option><option value="18945">34400000 - მოტოციკლეტები, ველოსიპედები და მოტოციკლეტის ეტლები</option><option value="18946">34500000 - გემები და ნავები</option><option value="18947">34600000 - რკინიგზისა და ტრამვაის ლოკომოტივები და მოძრავი შემადგენლობა და თანმდევი ნაწილები</option><option value="18948">34700000 - თვითმფრინავები (საჰაერო ხომალდები) და კოსმოსური ხომალდები</option><option value="18943">34900000 - სხვადასხვა სატრანსპორტო მოწყობილობა და სათადარიგო ნაწილები</option><option value="18958">35100000 - საგანგებო სიტუაციების დროს გამოსაყენებელი მოწყობილობები და უსაფრთხოების საშუალებები</option><option value="18949">35200000 - საპოლიციო მოწყობილობები</option><option value="18952">35300000 - იარაღი, საბრძოლო მასალა და აქსესუარები (თანმდევი ნაწილები)  </option><option value="18953">35400000 - სამხედრო მანქანები და თანმდევი ნაწილები</option><option value="18954">35500000 - საბრძოლო გემები და თანმდევი ნაწილები</option><option value="18955">35600000 - სამხედრო საჰაერო ხომალდები/თვითმფრინავები, რაკეტები და კოსმოსური ხომალდები</option><option value="18956">35700000 - სამხედრო ელექტრონული სისტემები</option><option value="18957">35800000 - ინდივიდუალური და დამხმარე მოწყობილობები</option><option value="18950">37300000 - მუსიკალური ინსტრუმენტები და ნაწილები</option><option value="18951">37400000 - სპორტული საქონელი და აღჭურვილობა - (ინვენტარი)</option><option value="18965">37500000 - თამაშები და სათამაშოები; ატრაქციონები</option><option value="18959">37800000 - ხელნაკეთობები და ხელოვნების ნივთების შესაქმნელად საჭირო მასალები</option><option value="18960">38100000 - სანავიგაციო და მეტეოროლოგიური ხელსაწყოები</option><option value="18961">38200000 - გეოლოგიური და გეოფიზიკური ხელსაწყოები</option><option value="18962">38300000 - საზომი ხელსაწყოები</option><option value="18963">38400000 - ფიზიკური მახასიათებლების კონტროლის ხელსაწყოები</option><option value="18964">38500000 - საკონტროლო და გამოსაცდელი აპარატურა</option><option value="18966">38600000 - ოპტიკური ხელსაწყოები</option><option value="18968">38700000 - ტაიმერები და მსგავსი მოწყობილობები; პარკინგის აპარატები/საათები </option><option value="18969">38800000 - საწარმოო პროცესებისა და დისტანციური მართვის მოწყობილობები</option><option value="18970">38900000 - შეფასებისა და ტესტირების სხვადასხვა სახის ხელსაწყოები   </option><option value="18971">39100000 - ავეჯი</option><option value="18967">39200000 - ავეჯის აქსესუარები</option><option value="18975">39300000 - სხვადასხვა სახის მოწყობილობები</option><option value="18976">39500000 - ქსოვილის ნივთები</option><option value="18977">39700000 - საოჯახო ტექნიკა</option><option value="18972">39800000 - საწმენდი და საპრიალებელი პროდუქცია</option><option value="18973">41100000 - ბუნებრივი წყალი</option><option value="18974">42100000 - დანადგარები მექანიკური ენერგიის წარმოებისა და გამოყენებისთვის</option><option value="18985">42200000 - მანქანა-დანადგარები საკვების, სასმელებისა და თამბაქოს გადასამუშავებლად და მათთან დაკავშირებული ნაწილები</option><option value="18978">42300000 - სამრეწველო ან ლაბორატორიული ქურები, ნაგვის საწვავი ღუმელები და ქურები</option><option value="18979">42400000 - ამწე და გადასაზიდი მოწყობილობები და მათი ნაწილები</option><option value="18983">42500000 - გამაგრილებელი და სავენტილაციო მოწყობილობები</option><option value="18984">42600000 - ჩარხები</option><option value="18980">42700000 - ქსოვილების, ტანსაცმლისა და ტყავის წარმოების მანქანა-დანადგარები</option><option value="18981">42800000 - ქაღალდის ან მუყაოს საწარმოებელი მანქანა-დანადგარები</option><option value="18982">42900000 - სხვადასხვა ზოგადი და სპეციალური დანიშნულების მანქანა-დანადგარები</option><option value="18994">43100000 - სამთო მანქანა-დანადგარები</option><option value="18986">43200000 - მიწის სათხრელი და სახაპავი მანქანები და მათი (მათთან დაკავშირებული) ნაწილები   </option><option value="18987">43300000 - სამშენებლო მანქანები და მოწყობილობები</option><option value="18988">43400000 - მინერალების დასამუშავებელი და სამსხმელო ფორმების მოდელირების მოწყობილობები </option><option value="18989">43500000 - მუხლუხა სატრანსპრტო საშუალებები &nbsp;</option><option value="18990">43600000 - სამთო მრეწველობის, კარიერული დამუშავებისა  და სამშენებლო მანქანების ნაწილები &nbsp; </option><option value="18991">43700000 - მეტალურგიული დანადგარები და მათთან დაკავშირებული ნაწილები</option><option value="18992">43800000 - საამქროს დანადგარები</option><option value="18993">44100000 - სამშენებლო მასალები და დამხმარე სამშენებლო მასალები </option><option value="19000">44200000 - სტრუქტურული მასალები</option><option value="19001">44300000 - კაბელები, მავთულები და მათთან დაკავშირებული მასალები</option><option value="19002">44400000 - სხვადასხვა ქარხნული წარმოების მასალა და მათთან დაკავშირებული საგნები</option><option value="18995">44500000 - ხელსაწყოები, საკეტები, გასაღებები, ანჯამები, დამჭერები, ჭაჯვები და ზამბარები/რესორები</option><option value="18996">44600000 - ავზები, რეზერვუარები და კონტეინერები; ცენტრალური გათბობის რადიატორები და ბოილერები</option><option value="18997">44800000 - საღებავები, ლაქები და მასტიკები</option><option value="18998">44900000 - სამშენებლო ქვა, კირქვა, თაბაშირი და ასპიდური ფიქალი</option><option value="18999">45100000 - სამშენებლო უბნის მოსამზადებელი სამუშაოები</option><option value="19003">45200000 - მთლიანი ან ნაწილობრივი სამშენებლო სამუშაოები და სამოქალაქო მშენებლობის სამუშაოები</option><option value="19007">45300000 - სამშენებლო-სამონტაჟო სამუშაოები</option><option value="19004">45400000 - შენობის დასრულების სამუშაოები</option><option value="19005">45500000 - სამშენებლო და სამოქალაქო მშენებლობის/ინჟინერიის მანქანა-დანადგარებისა და მათი ოპერატორების დაქირავება</option><option value="19006">48100000 - პროგრამული უზრუნველყოფის სამრეწველო პაკეტები </option><option value="19012">48200000 - ქსელების, ინტერნეტისა და ინტრანეტის პროგრამული  პაკეტები</option><option value="19013">48300000 - დოკუმენტების, გრაფიკული გამოსახულებების შექმნის, გამოსახულების დამუშავების, დაგეგმვისა და წარმადობის გაზრდის პროგრამული პაკეტები</option><option value="19014">48400000 - საქმიანი გარიგებებისა და პირადი საქმეების მართვის პროგრამული პაკეტები</option><option value="19015">48500000 - საკომუნიკაციო და მულტიმედიის პროგრამული პაკეტები</option><option value="19016">48600000 - მონაცემთა ბაზისა და ოპერაციული პროგრამული პაკეტები</option><option value="19017">48700000 - პროგრამული პაკეტების მომსახურე პროგრამები</option><option value="19008">48800000 - საინფორმაციო სისტემები და სერვერები</option><option value="19009">48900000 - სხვადასხვა სახის პროგრამული პაკეტები და კომპიუტერული სისტემები</option><option value="19010">50100000 - სატრანსპორტო საშუალებებისა და მათთან დაკავშირებული მოწყობილობების შეკეთება, ტექნიკური მომსახურება და მასთან დაკავშირებული მომსახურებები</option><option value="19011">50200000 - თვითმფრინავების, რკინიგზის, საგზაო და საზღვაო მოწყობილობების შეკეთება, ტექნიკური მომსახურება და მათთან დაკავშირებული მომსახურებები</option><option value="19025">50300000 - პერსონალური კომპიუტერების, საოფისე აპარატურის, სატელეკომუნიკაციო და აუდიოვიზუალური მოწყობილობების შეკეთება, ტექნიკური მომსახურება და მათთან დაკავშირებული მომსახურებები</option><option value="19026">50400000 - სამედიცინო და ზუსტი საზომი აპარატურის შეკეთება და ტექნიკური მომსახურება</option><option value="19018">50500000 - ტუმბოების, სარქველების, ონკანებისა და ლითონის კონტეინერების, ასევე, მანქანა-დანადგარების შეკეთება და ტექნიკური მომსახურება</option><option value="19019">50600000 - უსაფრთხოებისა და თავდაცვის მასალების შეკეთება და ტექნიკური მომსახურება</option><option value="19020">50700000 - შენობის მოწყობილობების შეკეთება და ტექნიკური მომსახურება</option><option value="19021">50800000 - სხვადასხვა სახის სარემონტო (შესაკეთებელი) სამუშაოები და ტექნიკური მომსახურება</option><option value="19024">51100000 - ელექტრო- და მექანიკური მოწყობილობების მონტაჟი</option><option value="19022">51200000 - საზომი, შესამოწმებელი, საცდელი და სანავიგაციო მოწყობილობების მონტაჟი</option><option value="19023">51300000 - საკომუნიკაციო მოწყობილობების მონტაჟი</option><option value="19046">51400000 - სამედიცინო და ქირურგიული მოწყობილობების მონტაჟი</option><option value="19047">51500000 - მანქანა-დანადგარებისა და მოწყობილობების მონტაჟი</option><option value="19027">51600000 - კომპიუტერებისა და საოფისე მოწყობილობების დამონტაჟება</option><option value="19028">51700000 - ხანძარსაწინააღმდეგო მოწყობილობების მონტაჟი</option><option value="19029">51800000 - ლითონის კონტეინერების მონტაჟი</option><option value="19030">51900000 - მართვისა და კონტროლის სისტემების მონტაჟი</option><option value="19033">55100000 - სასტუმროს მომსახურება</option><option value="19034">55200000 - ბუნების წიაღში დასვენება და სხვა ადგილები დაბინავებისთვის, სასტუმროების გარდა </option><option value="19035">55300000 - რესტორნებისა და კვების საწარმოების მომსახურეობები&nbsp; </option><option value="19036">55400000 - სასმელების მიტანის მომსახურება</option><option value="19037">55500000 - სასადილოებისა და საზოგადოებრივი კვების საწარმოების მომსახურება &nbsp; </option><option value="19038">55900000 - საცალო ვაჭრობის მომსახურებები</option><option value="19039">60100000 - საავტომობილო ტრანსპორტის მომსახურებები</option><option value="19040">60200000 - სარკინიგზო ტრანსპორტის მომსახურებები</option><option value="19041">60300000 - მილსადენი ტრანსპორტის მომსახურებები</option><option value="19042">60400000 - საჰაერო ტრანსპორტის მომსახურებები</option><option value="19043">60500000 - კოსმოსურ სატრანსპორტო სისტემასთან დაკავშირებული მომსახურებები</option><option value="19044">60600000 - წყლის ტრანსპორტის მომსახურებები</option><option value="19045">63100000 - ტვირთის გადაზიდვისა და შენახვის მომსახურებები</option><option value="19031">63500000 - ტურისტული სააგენტოების, ტუროპერატორებისა და ტურისტების დახმარების მომსახურებები</option><option value="19032">63700000 - სახმელეთო, წყლისა და საჰაერო ტრანსპორტის დამხმარე მომსახურებები</option><option value="19055">64100000 - საფოსტო და საკურიერო მომსახურებები</option><option value="19056">64200000 - სატელეკომუნიკაციო მომსახურებები</option><option value="19057">65100000 - წყლის განაწილება და მასთან დაკავშირებული მომსახურებები</option><option value="19058">65200000 - გაზის განაწილება და მასათან დაკავშირებული მომსახურებები</option><option value="19059">65300000 - ელექტროენერგიის განაწილება და მასთან დაკავშირებული მომსახურებები</option><option value="19060">65400000 - ენერგომომარაგების სხვა წყაროები და ელექტროენერგიის განაწილება</option><option value="19061">65500000 - მრიცხველის ჩვენების წაკითხვა</option><option value="19062">66100000 - საბანკო და საინვესტიციო მომსახურებები</option><option value="19063">66500000 - სადაზღვევო და საპენსიო მომსახურებები</option><option value="19048">66600000 - სახაზინო მომსახურებები</option><option value="19049">66700000 - გადაზღვევის მომსახურებები</option><option value="19050">70100000 - კერძო საკუთრებაში მყოფ უძრავ ქონებასთან დაკავშირებული მომსახურებები</option><option value="19051">70200000 - კერძო საკუთრების იჯარა ან ლიზინგი</option><option value="19052">70300000 - უძრავ ქონებასთან დაკავშირებული მომსახურებების გაწევა მესამე პირებისთვის ანაზღაურების სანაცვლოდ ან ხელშეკრულების საფუძველზე</option><option value="19053">71200000 - არქიტექტურული და მასთან დაკავშირებული მომსახურებები</option><option value="19054">71300000 - საინჟინრო მომსახურებები</option><option value="19064">71400000 - მომსახურება ურბანული დაგეგმარებისა და ლანდშაფტური არქიტექტურის სფეროში </option><option value="19065">71500000 - მშენებლობასთან დაკავშირებული მომსახურებები</option><option value="19066">71600000 - ტექნიკური შემოწმება, ანალიზი და საკონსულტაციო მომსახურებები</option><option value="19067">71700000 - მონიტორინგი და კონტროლი</option><option value="19068">71800000 - საკონსულტაციო მომსახურება წყალმომარაგებასა და ნარჩენებთან დაკავშირებით</option><option value="19069">71900000 - ლაბორატორიული მომსახურებები</option><option value="19070">72100000 - აპარატურულ უზრუნველყოფასთან დაკავშირებული საკონსულტაციო მომსახურებები</option><option value="19071">72200000 - პროგრამული უზრუნველყოფის შემუშავება და საკონსულტაციო მომსახურებები</option><option value="19083">72300000 - მონაცემთა მომსახურება</option><option value="19084">72400000 - ინტერნეტმომსახურებები</option><option value="19072">72500000 - კომპიუტერთან დაკავშირებული მომსახურებები</option><option value="19073">72600000 - კომპიუტერული უზრუნველყოფა და საკონსულტაციო მომსახურებები</option><option value="19074">72700000 - კომპიუტერული ქსელის მომსახურება</option><option value="19075">72800000 - კომპიუტერის შემოწმება და ტესტირება</option><option value="19076">72900000 - კომპიუტერის მონაცემების სარეზერვო დუბლირება და კატალოგების კონვერტირება</option><option value="19077">73100000 - მომსახურებები კვლევისა და ექსპერიმენტული განვითარების სფეროში </option><option value="19078">73200000 - კვლევასა და განვითარებასთან დაკავშირებული საკონსულტაციო მომსახურებები</option><option value="19079">73300000 - კვლევისა და განვითარების დაპროექტება და განხორციელება</option><option value="19080">73400000 - კვლევისა და განვითარების მომსახურება უსაფრთხოებისა და დაცვის (თავდაცვის) მასალებთან დაკავშირებით </option><option value="19081">75100000 - ადმინისტრაციული მომსახურება</option><option value="19082">75200000 - საზოგადოებისათვის მომსახურებების გაწევა</option><option value="19091">75300000 - სავალდებულო სოციალურ დაზღვევასთან დაკავშირებული მომსახურებები</option><option value="19092">76100000 - პროფესიონალური მომსახურებები გაზის მრეწველობისათვის</option><option value="19093">76200000 - პროფესიონალური მომსახურებები ნავთობმრეწველობისათვის</option><option value="19094">76300000 - ბურღვასთან დაკავშირებული მომსახურებები </option><option value="19095">76400000 - ჭაბურღილის კოშკურის განთავსებასთან დაკავშირებული მომსახურებები </option><option value="19096">76500000 - მომსახურებები ხმელეთზე და შელფზე</option><option value="19097">76600000 - მილსადენების დათვალიერება/ინსპექტირება</option><option value="19098">77100000 - სოფლის მეურნეობასთან დაკავშირებული მომსახურებები</option><option value="19099">77200000 - სატყეო მეურნეობასთან დაკავშირებული მომსახურებები</option><option value="19100">77300000 - მებაღჩეობასთან დაკავშირებული მომსახურებები</option><option value="19101">77400000 - ზოოლოგიური მომსახურებები</option><option value="19102">77500000 - მეცხოველეობასთან დაკავშირებული მომსახურებები</option><option value="19103">77600000 - ნადირობასთან დაკავშირებული მომსახურებები</option><option value="19104">77700000 - თევზის რეწვასთან დაკავშირებული დამატებითი მომსახურებები</option><option value="19105">77800000 - აკვაკულტურასთან დაკავშირებული მომსახურებები</option><option value="19106">77900000 - მეფუტკრეობასთან დაკავშირებული მომსახურებები</option><option value="19107">79100000 - იურიდიული მომსახურებები</option><option value="19108">79200000 - საბუღალტრო, აუდიტორული და ფისკალური მომსახურებები</option><option value="19109">79300000 - ბაზრის კვლევა და ეკონომიკური კვლევა; გამოკითხვები და სტატისტიკა</option><option value="19085">79400000 - ბიზნესსა და მენეჯმენტთან დაკავშირებული კონსულტაციები და მომსახურებები </option><option value="19086">79500000 - ოფისის მუშაობის უზრუნველყოფასთან დაკავშირებული მომსახურებები </option><option value="19087">79600000 - პერსონალის დაქირავებასთან დაკავშირებული მომსახურებები</option><option value="19088">79700000 - გამოძიებასა და უსაფრთხოებასთან დაკავშირებული მომსახურებები</option><option value="19089">79800000 - ბეჭდვა და მასთან დაკავშირებული მომსახურებები</option><option value="19090">79900000 - სხვადასხვა კომერციული მომსახურება და მასთან დაკავშირებული მომსახურებები</option><option value="19114">80100000 - მომსახურებები დაწყებითი განათლების სფეროში </option><option value="19115">80200000 - მომსახურებები საშუალო განათლების სფეროში </option><option value="19116">80300000 - მომსახურებები უმაღლესი განათლების სფეროში </option><option value="19117">80400000 - ზრდასრულების სწავლება და სხვა საგანმანათლებლო მომსახურებები </option><option value="19118">80500000 - სატრენინგო მომსახურებები</option><option value="19119">80600000 - პროფესიული მომზადება უსაფრთხოებისა და თავდაცვის მასალების სფეროში </option><option value="19120">85100000 - ჯანდაცვის სფეროს მომსახურებები </option><option value="19121">85200000 - ვეტერინარიული მომსახურებები</option><option value="19122">85300000 - სოციალური დახმარების სამსახური და მასთან დაკავშირებული მომსახურებები</option><option value="19110">90400000 - ჩამდინარე წყლებთან დაკავშირებული მომსახურებები </option><option value="19111">90500000 - ნარჩენებსა და ნაგავთან დაკავშირებული მომსახურებები</option><option value="19112">90600000 - ქალაქის ან სოფლის ზონების დასუფთავება და სანიტარიული მომსახურება, ასევე მათთან დაკავშირებული მომსახურებები</option><option value="19113">90700000 - მომსახურებები ეკოლოგიის სფეროში </option><option value="19131">90900000 - დასუფთავება და სანიტარიული მომსახურება </option><option value="19132">92100000 - კინო- და ვიდეომომსახურებები</option><option value="19133">92200000 - სატელევიზიო და რადიომომსახურებები</option><option value="19123">92300000 - გასართობი მომსახურებები </option><option value="19124">92400000 - ახალი ამბების სააგენტოების მომსახურებები</option><option value="19125">92500000 - ბიბლიოთეკების, არქივების, მუზეუმებისა და სხვა კულტურული დაწესებულებების მომსახურებები</option><option value="19126">92600000 - სპორტული მომსახურებები</option><option value="19127">92700000 - ინტერნეტ-კაფეების მომსახურება</option><option value="19128">98100000 - საწევრო ორგანიზაციების მომსახურებები</option><option value="19129">98200000 - თანაბარ შესაძლებლობებთან დაკავშირებული საკონსულტაციო მომსახურებები</option><option value="19130">98300000 - სხვადასხვა მომსახურება</option><option value="19134">98500000 - კერძო მეურნეობები დაქირავებული პირებით</option><option value="19135">98900000 - ექსტრატერიტორიული ორგანიზაციებისა და ორგანოების მიერ გაწეული მომსახურებები</option><option value="50">99999999 - </option>
+                                    </select></li>
+                                <li class="lbl">კლასიფიკატორის კოდები<br><label>(ძებნა მე-3 სიმბოლოდან)</label></li>
+                                <li><textarea id="cpv_codes_search" rows="1" style="width: 200px;" name="app_codes" autocomplete="off" class="ac_input"></textarea></li>
+                                <li><button id="cpv_tree" type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" role="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-gear"></span><span class="ui-button-text">CPV</span></button><button type="button" id="btn_cpveng" onclick="" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" role="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-gear"></span><span class="ui-button-text">CPV (ENG)</span></button></li>
+                                <li class="lbl">თარიღი</li>
+                                <select style="width:215px" id="app_date_type" name="app_date_type">
+                                    <option value="1">რეგისტრაციის თარიღი</option><option value="2">ვაჭრობის თარიღი</option><option value="3">სტატუსის თარიღი</option>
+                                </select>
+                                <li><input readonly="readonly" style="width: 85px;" type="text" name="app_date_from" id="app_date_from" value="" class="hasDatepicker"> <input readonly="readonly" style="width: 85px;" type="text" name="app_date_tlll" id="app_date_till" value="" class="hasDatepicker"></li>
+                                <li class="lbl">თანხით <label>(-დან/-მდე)</label></li>
+                                <li><input maxlength="10" style="width: 85px;" type="text" name="app_amount_from" id="app_amount_from" value=""> <input style="width: 85px;" maxlength="10" type="text" name="app_amount_to" id="app_amount_to" value=""></li>
+                                <li id="currency">
+                                    <input type="hidden" name="app_currency" id="c2" value="2" style="">
+                                </li>
+                                <li class="lbl">პრეისკურანტი</li>
+                                <li class="search-field">
+                                    <select style="width:210px" id="app_pricelist" name="app_pricelist">
+                                        <option value="0"></option>
+                                        <option value="1">ვაჭრობა პრეისკურანტით</option>
+                                        <option value="2">ვაჭრობა პრეისკურანტის გარეშე</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <hr noshade="noshade" size="1">
+                                </li>
+                                <li class="ui-buttonset"><span style="margin-right:4px"><button style="width:116px" id="search_btn" type="submit" class="ui-button ui-widget ui-state-default ui-button-text-icon-primary ui-corner-left" role="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-search"></span><span class="ui-button-text">ძებნა</span></button></span>
+                                    <button style="width:80px" id="cancel_btn" type="button" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" role="button" aria-disabled="false"><span class="ui-button-text">თავიდან</span></button>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+
+                    <h3 id="qep" class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all ui-accordion-icons" role="tab" aria-controls="ui-accordion-accordion-panel-1" aria-selected="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>ბაზრის კვლევა</h3>
+                    <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" id="ui-accordion-accordion-panel-1" aria-labelledby="qep" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none; height: 545px; overflow: auto;">
+
+                        <form name="qep_search_frm" id="qep_search_frm" method="post" action="library/qep/qep_controller.php">
+                            <input type="hidden" name="action" value="search_qep" style="">
+                            <input type="hidden" name="search" value="yez" style="">
+                            <input type="hidden" name="qep_amount_from" value="" style="">
+                            <input type="hidden" name="qep_amount_to" value="" style="">
+
+                            <li class="lbl">რეგისტრაციის ნომერი</li>
+                            <li><input type="text" style="width: 200px;" id="qep_reg_no" name="qep_reg_no" maxlength="20"></li>
+
+                            <li class="lbl">შესყიდვის პროცედურა</li>
+                            <li class="search-field">
+                                <select style="width:210px" id="qep_app_type" name="qep_app_type">
+                                    <option></option>
+                                    <option value="1">გამარტივებული შესყიდვა</option>
+                                    <option value="2">ელექტრონული შესყიდვა</option>
+                                    <option value="3">სხვა</option>
+                                </select>
+                            </li>
+
+                            <li class="lbl">შემსყიდველი <label>(ძებნა მე-3 სიმბოლოდან)</label></li>
+                            <li><input type="hidden" name="qep_shems_id" id="qep_shems_id" value="0" style=""><input maxlength="20" type="text" style="width: 200px;" name="org_f" id="org_f" autocomplete="off" class="ac_input"></li>
+
+                            <li class="lbl">შესყიდვის სტატუსი</li>
+                            <li class="search-field">
+                                <select style="width:210px" id="qep_status" name="qep_status">
+                                    <option value="0"></option>
+                                    <option value="10">გამოცხადებულია</option><option value="20">წინადადების მიღება დაწყებულია</option><option value="30">წინადადების მიღება დასრულებულია</option><option value="110">არ შედგა</option><option value="120">შეწყვეტილია</option><option value="140">ბაზრის  კვლევა დასრულებულია</option>
+                                </select>
+                            </li>
+
+                            <li class="lbl">შესყიდვის კატეგორია</li>
+                            <li class="search-field"><select style="width:210px" id="qep_basecode" name="qep_basecode">
+                                    <option value="0"></option>
+                                    <option value="18864">03100000 - სოფლის მეურნეობისა და ბაღჩეული პროდუქტები </option><option value="18865">03200000 - ბურღულეული, კარტოფილი, ბოსტნეული, ხილი და თხილეული</option><option value="18870">03300000 - მეცხოველეობის პროდუქტები, ნანადირევი და თევზჭერის პროდუქტები </option><option value="18871">03400000 - მეტყევეობისა და ტყეკაფვის პროდუქტები </option><option value="18866">09100000 - საწვავი</option><option value="18867">09200000 - ნავთობი, ქვანახშირი და ნავთობპროდუქტები </option><option value="18868">09300000 - ელექტროენერგია, გათბობა, მზისა და ბირთვული ენერგია </option><option value="18869">14200000 - ქვიშა და თიხა</option><option value="18877">14300000 - ქიმიური და სასუქი მინერალები</option><option value="18878">14400000 - მარილისა და სუფთა ნატრიუმის ქლორიდი</option><option value="18879">14500000 - სამთო მრეწველობასა და კარიერის დამუშავებასთან დაკავშირებული პროდუქტები</option><option value="18880">14600000 - ლითონის მადანი და შენადნობები</option><option value="18881">14700000 - ძირითადი ლითონები </option><option value="18882">14800000 - სხვადასხვა არალითონური მინერალური პროდუქტი</option><option value="18883">14900000 - აღდგენილი მეორადი ნედლეული</option><option value="18884">15100000 - ცხოველური წარმოშობის პროდუქტები, ხორცი და ხორცის პროდუქტები</option><option value="18885">15200000 - მზა და დაკონსერვებული თევზი </option><option value="18886">15300000 - ხილი, ბოსტნეული და მონათესავე პროდუქტები </option><option value="18872">15400000 - ცხოველური ან მცენარეული ზეთები და ცხიმები</option><option value="18873">15500000 - რძის პროდუქტები</option><option value="18874">15600000 - დაფქული მარცვლეული პროდუქტები, სახამებელი და სახამებლის პროდუქტები</option><option value="18875">15700000 - ცხოველის საკვები </option><option value="18876">15800000 - სხვადასხვა საკვები პროდუქტი</option><option value="18887">15900000 - სასმელები, თამბაქო და მონათესავე პროდუქტები</option><option value="18894">16100000 - სასოფლო-სამეურნეო და სატყეო დანიშნულების მანქანა-დანადგარები ნიადაგის მოსამზადებლად ან კულტივირებისათვის</option><option value="18895">16300000 - მოსავლის ასაღები მანქანები</option><option value="18896">16400000 - შესაწამლი მანქანები სოფლის მეურნეობის ან მებაღჩეობისათვის</option><option value="18897">16500000 - ავტომტვირთველი ან თვითმცლელი ტრაილერები და ნახევარტრაილერები სოფლის მეურნეობისათვის </option><option value="18898">16600000 - სპეციალიზებული სასოფლო-სამეურნეო ან სატყეო დანიშნულების მანქანა-დანადგარები </option><option value="18899">16700000 - ტრაქტორები</option><option value="18900">16800000 - სასოფლო-სამეურნეო და სატყეო დანიშნულების მანქანა-დანადგარების ნაწილები</option><option value="18901">18100000 - სამუშაო ტანსაცმელი, სპეცტანსაცმელი და აქსესუარები</option><option value="18902">18200000 - გარედან ჩასაცმელი ტანსაცმელი </option><option value="18903">18300000 - ტანსაცმელი </option><option value="18904">18400000 - სპეციალური ტანსაცმელი და აქსესუარები</option><option value="18888">18500000 - სამკაულები, საათები და მონათესავე ნივთები</option><option value="18889">18600000 - ბეწვეული და ბეწვეულის ნივთები</option><option value="18890">18800000 - ფეხსაცმელი</option><option value="18891">18900000 - საბარგო ნივთები, სასარაჯო ნაკეთობები, ტომრები და ჩანთები </option><option value="18892">19100000 - ტყავი</option><option value="18893">19200000 - საფეიქრო ნაწარმი და დაკავშირებული ნივთები </option><option value="18910">19400000 - ტექსტილის ნართი და ძაფი </option><option value="18911">19500000 - რეზინისა და პლასტმასის მასალები</option><option value="18912">19600000 - ტყავის, ტექსტილის, რეზინისა და პლასტმასის ნარჩენი</option><option value="18913">19700000 - სინთეტიკური რეზინი და ბოჭკოები</option><option value="18914">22100000 - ნაბეჭდი წიგნები, ბროშურები და საინფორმაციო ფურცლები</option><option value="18915">22200000 - გაზეთები, სამეცნიერო ჟურნალები, პერიოდიკა და ჟურნალები</option><option value="18916">22300000 - ღია ბარათები, მისალოცი ბარათები და სხვა ნაბეჭდი მასალა</option><option value="18917">22400000 - მარკები, ჩეკების წიგნაკები, ბანკნოტები, აქციები, სარეკლამო მასალა, კატალოგები და სახელმძღვანელოები</option><option value="18918">22500000 - საბეჭდი ფორმები ან ცილინდრები ან ბეჭდვისას გამოსაყენებელი სხვა საშუალებები </option><option value="18919">22600000 - საღებავი</option><option value="18920">22800000 - ქაღალდის ან მუყაოს სარეგისტრაციო ჟურნალები/წიგნები, საბუღალტრო წიგნები, ფორმები და სხვა ნაბეჭდი საკანცელარიო ნივთები</option><option value="18921">22900000 - სხვადასხვა ნაბეჭდი მასალა</option><option value="18922">24100000 - აირები</option><option value="18923">24200000 - საღებავები და პიგმენტები</option><option value="18905">24300000 - ძირითადი არაორგანული და ორგანული ქიმიკატები</option><option value="18906">24400000 - სასუქები და ნიტროგენული ნაერთები</option><option value="18907">24500000 - პლასტმასი პირველადი ფორმით</option><option value="18908">24600000 - ფეთქებადი ნივთიერებები</option><option value="18909">24900000 - სუფთა ქიმიკატები და სხვადასხვა ქიმიური ნივთიერებების პროდუქტები</option><option value="18925">30100000 - საოფისე მანქანა-დანადგარები, აღჭურვილობა და საკანცელარიო ნივთები, კომპიუტერების, პრინტერებისა და ავეჯის გარდა</option><option value="18924">30200000 - კომპიუტერული მოწყობილობები და აქსესუარები </option><option value="18931">31100000 - ელექტროძრავები, გენერატორები და ტრანსფორმატორები</option><option value="18932">31200000 - ელექტროენერგიის გამანაწილებელი და საკონტროლო აპარატურა</option><option value="18926">31300000 - იზოლირებული მავთული და კაბელი</option><option value="18927">31400000 - აკუმულატორები, დენის პირველადი წყაროები და პირველადი ელემენტები</option><option value="18928">31500000 - გასანათებელი მოწყობილობები და ელექტრონათურები</option><option value="18929">31600000 - ელექტრომოწყობილობები და აპარატურა</option><option value="18930">31700000 - ელექტრონული, ელექტრომექანიკური და ელექტროტექნიკური აქსესუარები </option><option value="18933">32200000 - რადიოტელეფონიის, რადიოსატელეგრაფო, რადიო- და ტელემაუწყებლობის აპარატურა</option><option value="18935">32300000 - ტელე- და რადიოსიგნალის მიმღებები და აუდიო- ან ვიდეოგამოსახულების ჩამწერი ან აღწარმოების აპარატურა </option><option value="18936">32400000 - ქსელები</option><option value="18937">32500000 - სატელეკომუნიკაციო მოწყობილობები და აქსესუარები</option><option value="18934">33100000 - სამედიცინო მოწყობილობები</option><option value="18938">33600000 - ფარმაცევტული პროდუქტები</option><option value="18939">33700000 - პირადი ჰიგიენის საშუალებები</option><option value="18942">33900000 - აუტოფსიისა და მორგისთვის საჭირო მოწყობილობები და აქსესუარები</option><option value="18940">34100000 - ავტოსატრანსპორტო საშუალებები</option><option value="18941">34200000 - სატრანსპორტო საშუალებების ძარები, მისაბმელები ან ნახევრადმისაბმელები</option><option value="18944">34300000 - ნაწილები და აქსესუარები სატრანსპორტო საშუალებებისა და მათი ძრავებისათვის</option><option value="18945">34400000 - მოტოციკლეტები, ველოსიპედები და მოტოციკლეტის ეტლები</option><option value="18946">34500000 - გემები და ნავები</option><option value="18947">34600000 - რკინიგზისა და ტრამვაის ლოკომოტივები და მოძრავი შემადგენლობა და თანმდევი ნაწილები</option><option value="18948">34700000 - თვითმფრინავები (საჰაერო ხომალდები) და კოსმოსური ხომალდები</option><option value="18943">34900000 - სხვადასხვა სატრანსპორტო მოწყობილობა და სათადარიგო ნაწილები</option><option value="18958">35100000 - საგანგებო სიტუაციების დროს გამოსაყენებელი მოწყობილობები და უსაფრთხოების საშუალებები</option><option value="18949">35200000 - საპოლიციო მოწყობილობები</option><option value="18952">35300000 - იარაღი, საბრძოლო მასალა და აქსესუარები (თანმდევი ნაწილები)  </option><option value="18953">35400000 - სამხედრო მანქანები და თანმდევი ნაწილები</option><option value="18954">35500000 - საბრძოლო გემები და თანმდევი ნაწილები</option><option value="18955">35600000 - სამხედრო საჰაერო ხომალდები/თვითმფრინავები, რაკეტები და კოსმოსური ხომალდები</option><option value="18956">35700000 - სამხედრო ელექტრონული სისტემები</option><option value="18957">35800000 - ინდივიდუალური და დამხმარე მოწყობილობები</option><option value="18950">37300000 - მუსიკალური ინსტრუმენტები და ნაწილები</option><option value="18951">37400000 - სპორტული საქონელი და აღჭურვილობა - (ინვენტარი)</option><option value="18965">37500000 - თამაშები და სათამაშოები; ატრაქციონები</option><option value="18959">37800000 - ხელნაკეთობები და ხელოვნების ნივთების შესაქმნელად საჭირო მასალები</option><option value="18960">38100000 - სანავიგაციო და მეტეოროლოგიური ხელსაწყოები</option><option value="18961">38200000 - გეოლოგიური და გეოფიზიკური ხელსაწყოები</option><option value="18962">38300000 - საზომი ხელსაწყოები</option><option value="18963">38400000 - ფიზიკური მახასიათებლების კონტროლის ხელსაწყოები</option><option value="18964">38500000 - საკონტროლო და გამოსაცდელი აპარატურა</option><option value="18966">38600000 - ოპტიკური ხელსაწყოები</option><option value="18968">38700000 - ტაიმერები და მსგავსი მოწყობილობები; პარკინგის აპარატები/საათები </option><option value="18969">38800000 - საწარმოო პროცესებისა და დისტანციური მართვის მოწყობილობები</option><option value="18970">38900000 - შეფასებისა და ტესტირების სხვადასხვა სახის ხელსაწყოები   </option><option value="18971">39100000 - ავეჯი</option><option value="18967">39200000 - ავეჯის აქსესუარები</option><option value="18975">39300000 - სხვადასხვა სახის მოწყობილობები</option><option value="18976">39500000 - ქსოვილის ნივთები</option><option value="18977">39700000 - საოჯახო ტექნიკა</option><option value="18972">39800000 - საწმენდი და საპრიალებელი პროდუქცია</option><option value="18973">41100000 - ბუნებრივი წყალი</option><option value="18974">42100000 - დანადგარები მექანიკური ენერგიის წარმოებისა და გამოყენებისთვის</option><option value="18985">42200000 - მანქანა-დანადგარები საკვების, სასმელებისა და თამბაქოს გადასამუშავებლად და მათთან დაკავშირებული ნაწილები</option><option value="18978">42300000 - სამრეწველო ან ლაბორატორიული ქურები, ნაგვის საწვავი ღუმელები და ქურები</option><option value="18979">42400000 - ამწე და გადასაზიდი მოწყობილობები და მათი ნაწილები</option><option value="18983">42500000 - გამაგრილებელი და სავენტილაციო მოწყობილობები</option><option value="18984">42600000 - ჩარხები</option><option value="18980">42700000 - ქსოვილების, ტანსაცმლისა და ტყავის წარმოების მანქანა-დანადგარები</option><option value="18981">42800000 - ქაღალდის ან მუყაოს საწარმოებელი მანქანა-დანადგარები</option><option value="18982">42900000 - სხვადასხვა ზოგადი და სპეციალური დანიშნულების მანქანა-დანადგარები</option><option value="18994">43100000 - სამთო მანქანა-დანადგარები</option><option value="18986">43200000 - მიწის სათხრელი და სახაპავი მანქანები და მათი (მათთან დაკავშირებული) ნაწილები   </option><option value="18987">43300000 - სამშენებლო მანქანები და მოწყობილობები</option><option value="18988">43400000 - მინერალების დასამუშავებელი და სამსხმელო ფორმების მოდელირების მოწყობილობები </option><option value="18989">43500000 - მუხლუხა სატრანსპრტო საშუალებები &nbsp;</option><option value="18990">43600000 - სამთო მრეწველობის, კარიერული დამუშავებისა  და სამშენებლო მანქანების ნაწილები &nbsp; </option><option value="18991">43700000 - მეტალურგიული დანადგარები და მათთან დაკავშირებული ნაწილები</option><option value="18992">43800000 - საამქროს დანადგარები</option><option value="18993">44100000 - სამშენებლო მასალები და დამხმარე სამშენებლო მასალები </option><option value="19000">44200000 - სტრუქტურული მასალები</option><option value="19001">44300000 - კაბელები, მავთულები და მათთან დაკავშირებული მასალები</option><option value="19002">44400000 - სხვადასხვა ქარხნული წარმოების მასალა და მათთან დაკავშირებული საგნები</option><option value="18995">44500000 - ხელსაწყოები, საკეტები, გასაღებები, ანჯამები, დამჭერები, ჭაჯვები და ზამბარები/რესორები</option><option value="18996">44600000 - ავზები, რეზერვუარები და კონტეინერები; ცენტრალური გათბობის რადიატორები და ბოილერები</option><option value="18997">44800000 - საღებავები, ლაქები და მასტიკები</option><option value="18998">44900000 - სამშენებლო ქვა, კირქვა, თაბაშირი და ასპიდური ფიქალი</option><option value="18999">45100000 - სამშენებლო უბნის მოსამზადებელი სამუშაოები</option><option value="19003">45200000 - მთლიანი ან ნაწილობრივი სამშენებლო სამუშაოები და სამოქალაქო მშენებლობის სამუშაოები</option><option value="19007">45300000 - სამშენებლო-სამონტაჟო სამუშაოები</option><option value="19004">45400000 - შენობის დასრულების სამუშაოები</option><option value="19005">45500000 - სამშენებლო და სამოქალაქო მშენებლობის/ინჟინერიის მანქანა-დანადგარებისა და მათი ოპერატორების დაქირავება</option><option value="19006">48100000 - პროგრამული უზრუნველყოფის სამრეწველო პაკეტები </option><option value="19012">48200000 - ქსელების, ინტერნეტისა და ინტრანეტის პროგრამული  პაკეტები</option><option value="19013">48300000 - დოკუმენტების, გრაფიკული გამოსახულებების შექმნის, გამოსახულების დამუშავების, დაგეგმვისა და წარმადობის გაზრდის პროგრამული პაკეტები</option><option value="19014">48400000 - საქმიანი გარიგებებისა და პირადი საქმეების მართვის პროგრამული პაკეტები</option><option value="19015">48500000 - საკომუნიკაციო და მულტიმედიის პროგრამული პაკეტები</option><option value="19016">48600000 - მონაცემთა ბაზისა და ოპერაციული პროგრამული პაკეტები</option><option value="19017">48700000 - პროგრამული პაკეტების მომსახურე პროგრამები</option><option value="19008">48800000 - საინფორმაციო სისტემები და სერვერები</option><option value="19009">48900000 - სხვადასხვა სახის პროგრამული პაკეტები და კომპიუტერული სისტემები</option><option value="19010">50100000 - სატრანსპორტო საშუალებებისა და მათთან დაკავშირებული მოწყობილობების შეკეთება, ტექნიკური მომსახურება და მასთან დაკავშირებული მომსახურებები</option><option value="19011">50200000 - თვითმფრინავების, რკინიგზის, საგზაო და საზღვაო მოწყობილობების შეკეთება, ტექნიკური მომსახურება და მათთან დაკავშირებული მომსახურებები</option><option value="19025">50300000 - პერსონალური კომპიუტერების, საოფისე აპარატურის, სატელეკომუნიკაციო და აუდიოვიზუალური მოწყობილობების შეკეთება, ტექნიკური მომსახურება და მათთან დაკავშირებული მომსახურებები</option><option value="19026">50400000 - სამედიცინო და ზუსტი საზომი აპარატურის შეკეთება და ტექნიკური მომსახურება</option><option value="19018">50500000 - ტუმბოების, სარქველების, ონკანებისა და ლითონის კონტეინერების, ასევე, მანქანა-დანადგარების შეკეთება და ტექნიკური მომსახურება</option><option value="19019">50600000 - უსაფრთხოებისა და თავდაცვის მასალების შეკეთება და ტექნიკური მომსახურება</option><option value="19020">50700000 - შენობის მოწყობილობების შეკეთება და ტექნიკური მომსახურება</option><option value="19021">50800000 - სხვადასხვა სახის სარემონტო (შესაკეთებელი) სამუშაოები და ტექნიკური მომსახურება</option><option value="19024">51100000 - ელექტრო- და მექანიკური მოწყობილობების მონტაჟი</option><option value="19022">51200000 - საზომი, შესამოწმებელი, საცდელი და სანავიგაციო მოწყობილობების მონტაჟი</option><option value="19023">51300000 - საკომუნიკაციო მოწყობილობების მონტაჟი</option><option value="19046">51400000 - სამედიცინო და ქირურგიული მოწყობილობების მონტაჟი</option><option value="19047">51500000 - მანქანა-დანადგარებისა და მოწყობილობების მონტაჟი</option><option value="19027">51600000 - კომპიუტერებისა და საოფისე მოწყობილობების დამონტაჟება</option><option value="19028">51700000 - ხანძარსაწინააღმდეგო მოწყობილობების მონტაჟი</option><option value="19029">51800000 - ლითონის კონტეინერების მონტაჟი</option><option value="19030">51900000 - მართვისა და კონტროლის სისტემების მონტაჟი</option><option value="19033">55100000 - სასტუმროს მომსახურება</option><option value="19034">55200000 - ბუნების წიაღში დასვენება და სხვა ადგილები დაბინავებისთვის, სასტუმროების გარდა </option><option value="19035">55300000 - რესტორნებისა და კვების საწარმოების მომსახურეობები&nbsp; </option><option value="19036">55400000 - სასმელების მიტანის მომსახურება</option><option value="19037">55500000 - სასადილოებისა და საზოგადოებრივი კვების საწარმოების მომსახურება &nbsp; </option><option value="19038">55900000 - საცალო ვაჭრობის მომსახურებები</option><option value="19039">60100000 - საავტომობილო ტრანსპორტის მომსახურებები</option><option value="19040">60200000 - სარკინიგზო ტრანსპორტის მომსახურებები</option><option value="19041">60300000 - მილსადენი ტრანსპორტის მომსახურებები</option><option value="19042">60400000 - საჰაერო ტრანსპორტის მომსახურებები</option><option value="19043">60500000 - კოსმოსურ სატრანსპორტო სისტემასთან დაკავშირებული მომსახურებები</option><option value="19044">60600000 - წყლის ტრანსპორტის მომსახურებები</option><option value="19045">63100000 - ტვირთის გადაზიდვისა და შენახვის მომსახურებები</option><option value="19031">63500000 - ტურისტული სააგენტოების, ტუროპერატორებისა და ტურისტების დახმარების მომსახურებები</option><option value="19032">63700000 - სახმელეთო, წყლისა და საჰაერო ტრანსპორტის დამხმარე მომსახურებები</option><option value="19055">64100000 - საფოსტო და საკურიერო მომსახურებები</option><option value="19056">64200000 - სატელეკომუნიკაციო მომსახურებები</option><option value="19057">65100000 - წყლის განაწილება და მასთან დაკავშირებული მომსახურებები</option><option value="19058">65200000 - გაზის განაწილება და მასათან დაკავშირებული მომსახურებები</option><option value="19059">65300000 - ელექტროენერგიის განაწილება და მასთან დაკავშირებული მომსახურებები</option><option value="19060">65400000 - ენერგომომარაგების სხვა წყაროები და ელექტროენერგიის განაწილება</option><option value="19061">65500000 - მრიცხველის ჩვენების წაკითხვა</option><option value="19062">66100000 - საბანკო და საინვესტიციო მომსახურებები</option><option value="19063">66500000 - სადაზღვევო და საპენსიო მომსახურებები</option><option value="19048">66600000 - სახაზინო მომსახურებები</option><option value="19049">66700000 - გადაზღვევის მომსახურებები</option><option value="19050">70100000 - კერძო საკუთრებაში მყოფ უძრავ ქონებასთან დაკავშირებული მომსახურებები</option><option value="19051">70200000 - კერძო საკუთრების იჯარა ან ლიზინგი</option><option value="19052">70300000 - უძრავ ქონებასთან დაკავშირებული მომსახურებების გაწევა მესამე პირებისთვის ანაზღაურების სანაცვლოდ ან ხელშეკრულების საფუძველზე</option><option value="19053">71200000 - არქიტექტურული და მასთან დაკავშირებული მომსახურებები</option><option value="19054">71300000 - საინჟინრო მომსახურებები</option><option value="19064">71400000 - მომსახურება ურბანული დაგეგმარებისა და ლანდშაფტური არქიტექტურის სფეროში </option><option value="19065">71500000 - მშენებლობასთან დაკავშირებული მომსახურებები</option><option value="19066">71600000 - ტექნიკური შემოწმება, ანალიზი და საკონსულტაციო მომსახურებები</option><option value="19067">71700000 - მონიტორინგი და კონტროლი</option><option value="19068">71800000 - საკონსულტაციო მომსახურება წყალმომარაგებასა და ნარჩენებთან დაკავშირებით</option><option value="19069">71900000 - ლაბორატორიული მომსახურებები</option><option value="19070">72100000 - აპარატურულ უზრუნველყოფასთან დაკავშირებული საკონსულტაციო მომსახურებები</option><option value="19071">72200000 - პროგრამული უზრუნველყოფის შემუშავება და საკონსულტაციო მომსახურებები</option><option value="19083">72300000 - მონაცემთა მომსახურება</option><option value="19084">72400000 - ინტერნეტმომსახურებები</option><option value="19072">72500000 - კომპიუტერთან დაკავშირებული მომსახურებები</option><option value="19073">72600000 - კომპიუტერული უზრუნველყოფა და საკონსულტაციო მომსახურებები</option><option value="19074">72700000 - კომპიუტერული ქსელის მომსახურება</option><option value="19075">72800000 - კომპიუტერის შემოწმება და ტესტირება</option><option value="19076">72900000 - კომპიუტერის მონაცემების სარეზერვო დუბლირება და კატალოგების კონვერტირება</option><option value="19077">73100000 - მომსახურებები კვლევისა და ექსპერიმენტული განვითარების სფეროში </option><option value="19078">73200000 - კვლევასა და განვითარებასთან დაკავშირებული საკონსულტაციო მომსახურებები</option><option value="19079">73300000 - კვლევისა და განვითარების დაპროექტება და განხორციელება</option><option value="19080">73400000 - კვლევისა და განვითარების მომსახურება უსაფრთხოებისა და დაცვის (თავდაცვის) მასალებთან დაკავშირებით </option><option value="19081">75100000 - ადმინისტრაციული მომსახურება</option><option value="19082">75200000 - საზოგადოებისათვის მომსახურებების გაწევა</option><option value="19091">75300000 - სავალდებულო სოციალურ დაზღვევასთან დაკავშირებული მომსახურებები</option><option value="19092">76100000 - პროფესიონალური მომსახურებები გაზის მრეწველობისათვის</option><option value="19093">76200000 - პროფესიონალური მომსახურებები ნავთობმრეწველობისათვის</option><option value="19094">76300000 - ბურღვასთან დაკავშირებული მომსახურებები </option><option value="19095">76400000 - ჭაბურღილის კოშკურის განთავსებასთან დაკავშირებული მომსახურებები </option><option value="19096">76500000 - მომსახურებები ხმელეთზე და შელფზე</option><option value="19097">76600000 - მილსადენების დათვალიერება/ინსპექტირება</option><option value="19098">77100000 - სოფლის მეურნეობასთან დაკავშირებული მომსახურებები</option><option value="19099">77200000 - სატყეო მეურნეობასთან დაკავშირებული მომსახურებები</option><option value="19100">77300000 - მებაღჩეობასთან დაკავშირებული მომსახურებები</option><option value="19101">77400000 - ზოოლოგიური მომსახურებები</option><option value="19102">77500000 - მეცხოველეობასთან დაკავშირებული მომსახურებები</option><option value="19103">77600000 - ნადირობასთან დაკავშირებული მომსახურებები</option><option value="19104">77700000 - თევზის რეწვასთან დაკავშირებული დამატებითი მომსახურებები</option><option value="19105">77800000 - აკვაკულტურასთან დაკავშირებული მომსახურებები</option><option value="19106">77900000 - მეფუტკრეობასთან დაკავშირებული მომსახურებები</option><option value="19107">79100000 - იურიდიული მომსახურებები</option><option value="19108">79200000 - საბუღალტრო, აუდიტორული და ფისკალური მომსახურებები</option><option value="19109">79300000 - ბაზრის კვლევა და ეკონომიკური კვლევა; გამოკითხვები და სტატისტიკა</option><option value="19085">79400000 - ბიზნესსა და მენეჯმენტთან დაკავშირებული კონსულტაციები და მომსახურებები </option><option value="19086">79500000 - ოფისის მუშაობის უზრუნველყოფასთან დაკავშირებული მომსახურებები </option><option value="19087">79600000 - პერსონალის დაქირავებასთან დაკავშირებული მომსახურებები</option><option value="19088">79700000 - გამოძიებასა და უსაფრთხოებასთან დაკავშირებული მომსახურებები</option><option value="19089">79800000 - ბეჭდვა და მასთან დაკავშირებული მომსახურებები</option><option value="19090">79900000 - სხვადასხვა კომერციული მომსახურება და მასთან დაკავშირებული მომსახურებები</option><option value="19114">80100000 - მომსახურებები დაწყებითი განათლების სფეროში </option><option value="19115">80200000 - მომსახურებები საშუალო განათლების სფეროში </option><option value="19116">80300000 - მომსახურებები უმაღლესი განათლების სფეროში </option><option value="19117">80400000 - ზრდასრულების სწავლება და სხვა საგანმანათლებლო მომსახურებები </option><option value="19118">80500000 - სატრენინგო მომსახურებები</option><option value="19119">80600000 - პროფესიული მომზადება უსაფრთხოებისა და თავდაცვის მასალების სფეროში </option><option value="19120">85100000 - ჯანდაცვის სფეროს მომსახურებები </option><option value="19121">85200000 - ვეტერინარიული მომსახურებები</option><option value="19122">85300000 - სოციალური დახმარების სამსახური და მასთან დაკავშირებული მომსახურებები</option><option value="19110">90400000 - ჩამდინარე წყლებთან დაკავშირებული მომსახურებები </option><option value="19111">90500000 - ნარჩენებსა და ნაგავთან დაკავშირებული მომსახურებები</option><option value="19112">90600000 - ქალაქის ან სოფლის ზონების დასუფთავება და სანიტარიული მომსახურება, ასევე მათთან დაკავშირებული მომსახურებები</option><option value="19113">90700000 - მომსახურებები ეკოლოგიის სფეროში </option><option value="19131">90900000 - დასუფთავება და სანიტარიული მომსახურება </option><option value="19132">92100000 - კინო- და ვიდეომომსახურებები</option><option value="19133">92200000 - სატელევიზიო და რადიომომსახურებები</option><option value="19123">92300000 - გასართობი მომსახურებები </option><option value="19124">92400000 - ახალი ამბების სააგენტოების მომსახურებები</option><option value="19125">92500000 - ბიბლიოთეკების, არქივების, მუზეუმებისა და სხვა კულტურული დაწესებულებების მომსახურებები</option><option value="19126">92600000 - სპორტული მომსახურებები</option><option value="19127">92700000 - ინტერნეტ-კაფეების მომსახურება</option><option value="19128">98100000 - საწევრო ორგანიზაციების მომსახურებები</option><option value="19129">98200000 - თანაბარ შესაძლებლობებთან დაკავშირებული საკონსულტაციო მომსახურებები</option><option value="19130">98300000 - სხვადასხვა მომსახურება</option><option value="19134">98500000 - კერძო მეურნეობები დაქირავებული პირებით</option><option value="19135">98900000 - ექსტრატერიტორიული ორგანიზაციებისა და ორგანოების მიერ გაწეული მომსახურებები</option><option value="50">99999999 - </option>
+                                </select>
+                            </li>
+
+                            <li class="lbl">კლასიფიკატორის კოდები</li>
+                            <li class="search-field">
+                                <textarea title="(ძებნა მე-3 სიმბოლოდან)" class="three-char ac_input" id="qep_cpv_codes_search" rows="2" style="width: 180px;" name="qep_codes" autocomplete="off"></textarea>
+                                <button id="qep_cpv_tree" type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" role="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-gear"></span><span class="ui-button-text">CPV</span></button>
+                                <button type="button" id="qep_btn_cpveng" onclick="" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" role="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-gear"></span><span class="ui-button-text">CPV (ENG)</span></button>
+                            </li>
+
+                            <li class="lbl">თარიღი</li>
+                            <li class="search-field">
+                                <select style="width:210px" id="qep_date_type" name="qep_date_type">
+                                    <option value="1">რეგისტრაციის თარიღი</option><option value="2">ვაჭრობის თარიღი</option><option value="3">სტატუსის თარიღი</option>
+                                </select>
+                                <input readonly="readonly" style="width: 88px;" type="text" name="qep_date_from" id="qep_date_from" value="" class="hasDatepicker">
+                                <input readonly="readonly" style="width: 88px;" type="text" name="qep_date_till" id="qep_date_till" value="" class="hasDatepicker">
+                            </li>
+
+                            <li>
+                                <hr noshade="noshade" size="1">
+                            </li>
+
+                            <li class="ui-buttonset"><span style="margin-right:4px"><button style="width:116px" id="qep_search_btn" type="submit" class="ui-button ui-widget ui-state-default ui-button-text-icon-primary ui-corner-left" role="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-search"></span><span class="ui-button-text">ძებნა</span></button></span>
+                                <button style="width:80px" id="qep_cancel_btn" type="button" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" role="button" aria-disabled="false"><span class="ui-button-text">თავიდან</span></button>
+                            </li>
+                            
+                        </form>
+                        <!-- <script type="text/javascript" src="templates/qep/qep.js"></script> -->
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="content" class="pane ui-layout-center ui-layout-pane ui-layout-pane-center ui-layout-pane-hover ui-layout-pane-center-hover ui-layout-pane-open-hover ui-layout-pane-center-open-hover" style="position: absolute; margin: 0px; inset: 64px 0px 23px 250px; height: 625px; width: 996px; z-index: 0; display: block; visibility: visible;">
+                <div style="padding:0;margin:0" id="home"></div>
+                <div style="padding:0;margin:0" id="app_list"><div class="ui-widget-content ui-corner-top">
+
+<p>
+<button id="b1" type="button" onclick="$.get('library/controller.php',{search_org_type:0, action:'org_list'}, function(data) {$('#app_list').html(data);});" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" role="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-folder-open"></span><span class="ui-button-text">ყველა</span></button>
+<button id="b2" type="button" onclick="$.get('library/controller.php',{search_org_type:3, action:'org_list'}, function(data) {$('#app_list').html(data);});" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" role="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-folder-open"></span><span class="ui-button-text">შემსყიდველები</span></button>
+<button id="b3" type="button" onclick="$.get('library/controller.php',{search_org_type:1, action:'org_list'}, function(data) {$('#app_list').html(data);});" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" role="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-folder-open"></span><span class="ui-button-text">მიმწოდებლები</span></button>
+<button id="b4" type="button" onclick="window.open('http://www.procurement.gov.ge/BlackList.aspx');" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" role="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-folder-open"></span><span class="ui-button-text">შავი სია</span></button>
+
+<button id="b6" type="button" onclick="window.open('http://www.procurement.gov.ge/WhiteList.aspx');" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" role="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-folder-open"></span><span class="ui-button-text">თეთრი სია</span></button>
+
+</p>
+
+<div class="pad4px">
+<form name="search_org" id="search_org" method="post" action="library/controller.php">
+<input type="hidden" name="action" value="org_list" style="">
+<input type="hidden" name="search" value="1" style="">
+სახელი/დასახელება <input type="text" size="16" name="search_org_name" maxlength="10" style="">&nbsp;
+საიდენტიფიკაციო კოდი <input type="text" size="12" name="search_org_taxcode" maxlength="25" style="">&nbsp;<button type="submit" id="search_org_btn" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" role="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-search"></span><span class="ui-button-text">ძებნა</span></button>
+
+</form>
+</div>
+
+<table id="list_orgs" width="100%" cellspacing="1" cellpadding="6" class="ktable">
+<colgroup>
+<col>
+<col width="100">
+<col width="200">
+</colgroup>
+	<thead>
+		<tr class="ui-widget-header">
+			<td>*</td>
+			<td>დარეგისტრირდა</td>
+			<td>*</td>
+		</tr>
+	</thead>
+	<tbody>
+	<tr onclick="ShowProfile(128644)">
+		<td><span class="blacklisted0">ზურაბ ცალუღელაშვილი</span></td>
+		<td>29.11.2025</td>
+		<td>მიმწოდებელი</td>
+	</tr><tr onclick="ShowProfile(128643)">
+		<td><span class="blacklisted0">ინდივიდუალური მეწარმე თინა ფხაკაძე</span></td>
+		<td>29.11.2025</td>
+		<td>მიმწოდებელი</td>
+	</tr><tr onclick="ShowProfile(128641)">
+		<td><span class="blacklisted0">შპს ენ-ჯი-თი</span></td>
+		<td>29.11.2025</td>
+		<td>მიმწოდებელი</td>
+	</tr><tr onclick="ShowProfile(128640)">
+		<td><span class="blacklisted0">ოთარი სინაურიძე</span></td>
+		<td>28.11.2025</td>
+		<td>მიმწოდებელი</td>
+	</tr><tr onclick="ShowProfile(128639)">
+		<td><span class="blacklisted0">ინდივიდუალური მეწარმე ლეილა თაბაგარი</span></td>
+		<td>28.11.2025</td>
+		<td>მიმწოდებელი</td>
+	</tr><tr onclick="ShowProfile(128638)">
+		<td><span class="blacklisted0">გიორგი დიასამიძე</span></td>
+		<td>28.11.2025</td>
+		<td>მიმწოდებელი</td>
+	</tr><tr onclick="ShowProfile(128637)">
+		<td><span class="blacklisted0">შპს ჰოთ სთორი</span></td>
+		<td>28.11.2025</td>
+		<td>მიმწოდებელი</td>
+	</tr><tr onclick="ShowProfile(128635)">
+		<td><span class="blacklisted0">შპს დენდროლოგია და არქიტექტურა</span></td>
+		<td>28.11.2025</td>
+		<td>მიმწოდებელი</td>
+	</tr><tr onclick="ShowProfile(128634)">
+		<td><span class="blacklisted0">თორნიკე ლომსაძე</span></td>
+		<td>28.11.2025</td>
+		<td>მიმწოდებელი</td>
+	</tr><tr onclick="ShowProfile(128633)">
+		<td><span class="blacklisted0">შპს დემარი 25</span></td>
+		<td>28.11.2025</td>
+		<td>მიმწოდებელი</td>
+	</tr><tr onclick="ShowProfile(128632)" class="hover">
+		<td><span class="blacklisted0">შპს გ2 თიმ ქომერსი</span></td>
+		<td>28.11.2025</td>
+		<td>მიმწოდებელი</td>
+	</tr><tr onclick="ShowProfile(128630)">
+		<td><span class="blacklisted0">შპს ტრანსკო ვაგონი</span></td>
+		<td>28.11.2025</td>
+		<td>მიმწოდებელი</td>
+	</tr><tr onclick="ShowProfile(128629)">
+		<td><span class="blacklisted0">შპს ტექნიკის ბუმი</span></td>
+		<td>28.11.2025</td>
+		<td>მიმწოდებელი</td>
+	</tr><tr onclick="ShowProfile(128627)">
+		<td><span class="blacklisted0">ინდივიდუალური მეწარმე ნანა კაპანაძე</span></td>
+		<td>28.11.2025</td>
+		<td>მიმწოდებელი</td>
+	</tr><tr onclick="ShowProfile(128626)">
+		<td><span class="blacklisted0">ნოე ქანთარია</span></td>
+		<td>28.11.2025</td>
+		<td>მიმწოდებელი</td>
+	</tr>
+	</tbody>
+</table>
+
+</div><div class="pager pad4px">
+    <span class="ui-buttonset">
+    	<button id="btn_first" type="button" class="ui-button ui-widget ui-state-default ui-button-icon-only ui-corner-left" role="button" aria-disabled="false" title=""><span class="ui-button-icon-primary ui-icon ui-icon-seek-first"></span><span class="ui-button-text">&nbsp;</span></button>
+		<button id="btn_prev" type="button" class="ui-button ui-widget ui-state-default ui-button-icon-only" role="button" aria-disabled="false" title=""><span class="ui-button-icon-primary ui-icon ui-icon-seek-prev"></span><span class="ui-button-text">&nbsp;</span></button>
+		<button type="button" class="ui-button ui-widget ui-state-default ui-button-text-icon-primary" role="button" aria-disabled="false"><span class="ui-button-icon-primary ui-icon ui-icon-refresh"></span><span class="ui-button-text">62217&nbsp;ჩანაწერი&nbsp;(გვერდი: 1/4148)</span></button>
+		<button 1="" id="btn_next" type="button" class="ui-button ui-widget ui-state-default ui-button-icon-only" role="button" aria-disabled="false" title=""><span class="ui-button-icon-primary ui-icon ui-icon-seek-next"></span><span class="ui-button-text">&nbsp;</span></button>
+		<button 1="" id="btn_last" type="button" class="ui-button ui-widget ui-state-default ui-button-icon-only ui-corner-right" role="button" aria-disabled="false" title=""><span class="ui-button-icon-primary ui-icon ui-icon-seek-end"></span><span class="ui-button-text">&nbsp;</span></button>
+	</span>
+</div>
+
+
+</div>
+                <div style="padding:0;margin:0" id="app"></div>
+            </div>
+
+            <div id="footer" class="ui-layout-south ui-layout-pane ui-layout-pane-south" style="position: absolute; margin: 0px; inset: auto 0px 0px; width: auto; z-index: 0; height: 15px; display: block; visibility: visible;">
+                <div style="display: inline-block;margin-right:130px"><a href="../privacy_policy.html">PRIVACY POLICY</a></div>
+                ამჟამად სისტემაშია:&nbsp;
+                <span id="osess" class="color-1" style="font-size:1.1em;font-weight:bold">151</span> რეგისტრირებული მომხმარებელი,&nbsp;<span id="guests" class="color-1" style="font-size:1.1em;font-weight:bold">1751</span> სტუმარი
+                <div class="color-2" style="float:right">სახელმწიფო შესყიდვების სააგენტო 2010</div>
+            </div>
+
+        <div id="" class="ui-layout-resizer ui-layout-resizer-north ui-layout-resizer-open ui-layout-resizer-north-open" style="position: absolute; padding: 0px; margin: 0px; font-size: 1px; text-align: left; overflow: hidden; z-index: 2; top: 64px; cursor: default; display: none;"><div id="" class="ui-layout-toggler ui-layout-toggler-north ui-layout-toggler-open ui-layout-toggler-north-open" title="Close" style="position: absolute; display: block; padding: 0px; margin: 0px; overflow: hidden; text-align: center; font-size: 1px; cursor: pointer; z-index: 1; visibility: visible;"></div></div><div id="" class="ui-layout-resizer ui-layout-resizer-south ui-layout-resizer-open ui-layout-resizer-south-open" style="position: absolute; padding: 0px; margin: 0px; font-size: 1px; text-align: left; overflow: hidden; z-index: 2; bottom: 23px; cursor: default; display: none;"><div id="" class="ui-layout-toggler ui-layout-toggler-south ui-layout-toggler-open ui-layout-toggler-south-open" title="Close" style="position: absolute; display: block; padding: 0px; margin: 0px; overflow: hidden; text-align: center; font-size: 1px; cursor: pointer; z-index: 1; visibility: visible;"></div></div><div id="" class="ui-layout-resizer ui-layout-resizer-west ui-layout-resizer-open ui-layout-resizer-west-open" style="position: absolute; padding: 0px; margin: 0px; font-size: 1px; text-align: left; overflow: hidden; z-index: 2; left: 250px; cursor: default; display: none;"><div id="" class="ui-layout-toggler ui-layout-toggler-west ui-layout-toggler-open ui-layout-toggler-west-open" title="Close" style="position: absolute; display: block; padding: 0px; margin: 0px; overflow: hidden; text-align: center; font-size: 1px; cursor: pointer; z-index: 1; visibility: visible;"></div></div></div>
+        <div id="dialog"></div>
+        <div id="adialog"></div>
+    
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>

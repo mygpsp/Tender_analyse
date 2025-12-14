@@ -1,0 +1,23 @@
+# System
+.DS_Store
+*.log
+__pycache__/
+
+# Dependencies
+node_modules/
+venv/
+.env
+
+# SSH Keys (Safety)
+git
+git.pub
+
+# Specific Data/Logs
+detailed_scraper.log
+scraping_report.log
+databackup/
+main_scrapper/data/
+frontend/build/
+frontend/dist/
+items/
+source/

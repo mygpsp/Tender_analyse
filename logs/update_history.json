@@ -1,0 +1,1238 @@
+[
+  {
+    "run_id": "8a52d46b-0221-409d-a6dc-03eb13d70b5d",
+    "timestamp": "2025-12-08T22:53:40.253449",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 153,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 913,
+      "errors": []
+    },
+    "duration_seconds": 1.01,
+    "data_file": "con_detailed_tenders.jsonl"
+  },
+  {
+    "run_id": "788bb641-c337-44cd-a232-acd348a21020",
+    "timestamp": "2025-12-08T23:18:54.515655",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 153,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 913,
+      "errors": []
+    },
+    "duration_seconds": 1.15,
+    "data_file": "con_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "5fd2ebc2-ce21-4b8a-8f55-ec1518e8bf95",
+    "timestamp": "2025-12-08T23:22:48.368554",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 153,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 913,
+      "errors": []
+    },
+    "duration_seconds": 0.93,
+    "data_file": "con_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "cfa8ccb4-a527-499b-bb03-06e997d4f9fb",
+    "timestamp": "2025-12-09T00:06:56.563590",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 147,
+      "status_changes_detected": 147,
+      "new_tenders_added": 0,
+      "total_tenders": 913,
+      "errors": [
+        "Detail scraper error: usage: run_detailed_production.py [-h] [--concurrency CONCURRENCY] [--info]\n                                  [--tenders TENDERS [TENDERS ...]] [--test]\n                                  [--days DAYS]"
+      ]
+    },
+    "duration_seconds": 279.39,
+    "data_file": "con_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "582afdc2-e731-4633-b6aa-d537613de3cd",
+    "timestamp": "2025-12-09T00:08:36.169635",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 147,
+      "status_changes_detected": 147,
+      "new_tenders_added": 0,
+      "total_tenders": 913,
+      "errors": [
+        "Detail scraper error: usage: run_detailed_production.py [-h] [--concurrency CONCURRENCY] [--info]\n                                  [--tenders TENDERS [TENDERS ...]] [--test]\n                                  [--days DAYS]"
+      ]
+    },
+    "duration_seconds": 232.69,
+    "data_file": "con_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "b61fa907-1f90-48da-ad17-d4684edee274",
+    "timestamp": "2025-12-09T00:14:17.832395",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 147,
+      "status_changes_detected": 147,
+      "new_tenders_added": 50,
+      "total_tenders": 963,
+      "errors": []
+    },
+    "duration_seconds": 14832.68,
+    "data_file": "con_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "6b0eb8d3-993e-495b-9809-9e01c70895f1",
+    "timestamp": "2025-12-09T00:17:22.647829",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 178,
+      "status_changes_detected": 178,
+      "new_tenders_added": 44,
+      "total_tenders": 993,
+      "errors": []
+    },
+    "duration_seconds": 28271.9,
+    "data_file": "con_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "73700b29-3acc-4061-adbd-5176065be8fb",
+    "timestamp": "2025-12-10T20:01:13.216071",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 200,
+      "status_changes_detected": 203,
+      "new_tenders_added": 112,
+      "total_tenders": 1105,
+      "errors": []
+    },
+    "duration_seconds": 1049.58,
+    "data_file": "con_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "bce0212b-c102-474d-b0bc-603a6e7dc74e",
+    "timestamp": "2025-12-10T20:56:52.542318",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 1238,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 2248,
+      "errors": []
+    },
+    "duration_seconds": 2.09,
+    "data_file": "con_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "d5d161df-f98f-4fc7-b97f-17a75748f991",
+    "timestamp": "2025-12-10T20:56:54.663710",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 2145,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 8540,
+      "errors": []
+    },
+    "duration_seconds": 6.69,
+    "data_file": "nat_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "f61d14c7-9728-45c2-8a12-622b3e800de8",
+    "timestamp": "2025-12-10T20:57:01.538524",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 102,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 438,
+      "errors": []
+    },
+    "duration_seconds": 0.28,
+    "data_file": "spa_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "a66cda87-65bb-43d8-8cb8-2bc53590725b",
+    "timestamp": "2025-12-10T21:17:46.367668",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 1238,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 2248,
+      "errors": []
+    },
+    "duration_seconds": 2.11,
+    "data_file": "con_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "92d270b1-2bb5-43b9-aba3-adaf2701f76a",
+    "timestamp": "2025-12-10T21:17:48.511988",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 2145,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 8540,
+      "errors": []
+    },
+    "duration_seconds": 6.5,
+    "data_file": "nat_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "e9d1edbe-1acf-4300-8a3c-5e333750a72d",
+    "timestamp": "2025-12-10T21:17:55.136704",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 102,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 438,
+      "errors": []
+    },
+    "duration_seconds": 0.29,
+    "data_file": "spa_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "a66f10de-52ae-49ec-81a9-162e6f7781ff",
+    "timestamp": "2025-12-10T21:17:55.427873",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 0,
+      "errors": []
+    },
+    "duration_seconds": 0.0,
+    "data_file": "cnt_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "baa4a90f-102b-4386-90c8-7009361b3b93",
+    "timestamp": "2025-12-10T21:17:55.429947",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 0,
+      "errors": []
+    },
+    "duration_seconds": 0.0,
+    "data_file": "mep_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "50dfd787-fd48-4185-8386-bc65ceb53794",
+    "timestamp": "2025-12-10T21:17:55.431790",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 0,
+      "errors": []
+    },
+    "duration_seconds": 0.0,
+    "data_file": "dap_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "3c15c766-6452-4d51-8510-fa40a3442a9b",
+    "timestamp": "2025-12-10T21:17:55.434316",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 0,
+      "errors": []
+    },
+    "duration_seconds": 0.0,
+    "data_file": "tep_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "b91bff94-5b42-4a8a-b031-9cd853c6b9d9",
+    "timestamp": "2025-12-10T21:17:55.436330",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 68,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 242,
+      "errors": []
+    },
+    "duration_seconds": 0.32,
+    "data_file": "geo_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "f090f916-3803-4310-a48d-e1567341138b",
+    "timestamp": "2025-12-10T21:17:55.761900",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 10,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 51,
+      "errors": []
+    },
+    "duration_seconds": 0.04,
+    "data_file": "dep_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "2e985de0-e108-4807-9d48-82d6de7f67ff",
+    "timestamp": "2025-12-10T21:17:55.803408",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 0,
+      "errors": []
+    },
+    "duration_seconds": 0.0,
+    "data_file": "gra_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "bd942088-a51c-4d8b-83c1-5414465c2e8b",
+    "timestamp": "2025-12-10T21:30:14.029512",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 1238,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 2248,
+      "errors": []
+    },
+    "duration_seconds": 11.7,
+    "data_file": "con_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "3a3ae96b-5e85-49ef-84e6-f1706145cf59",
+    "timestamp": "2025-12-10T21:30:25.765304",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 2145,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 8540,
+      "errors": [
+        "Scraper error: sequence item 11: expected str instance, NoneType found"
+      ]
+    },
+    "duration_seconds": 6.04,
+    "data_file": "nat_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "490a6ad9-a5d2-4be0-b7bf-b3af129f36ee",
+    "timestamp": "2025-12-10T21:30:31.994732",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 102,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 438,
+      "errors": [
+        "Scraper error: sequence item 11: expected str instance, NoneType found"
+      ]
+    },
+    "duration_seconds": 0.25,
+    "data_file": "spa_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "2bf70002-8314-4e40-978b-0d9a0f539529",
+    "timestamp": "2025-12-10T21:30:32.247008",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 0,
+      "errors": [
+        "Scraper error: sequence item 9: expected str instance, NoneType found"
+      ]
+    },
+    "duration_seconds": 0.0,
+    "data_file": "cnt_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "86573bda-05e8-448a-8dd2-a7a06eb011cb",
+    "timestamp": "2025-12-10T21:30:32.250684",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 0,
+      "errors": [
+        "Scraper error: sequence item 9: expected str instance, NoneType found"
+      ]
+    },
+    "duration_seconds": 0.0,
+    "data_file": "mep_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "0324c5c0-fc78-438e-a4dd-937596d8869e",
+    "timestamp": "2025-12-10T21:30:32.254421",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 0,
+      "errors": [
+        "Scraper error: sequence item 9: expected str instance, NoneType found"
+      ]
+    },
+    "duration_seconds": 0.0,
+    "data_file": "dap_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "9e485cce-01a8-4991-afb8-2c2496f1a80b",
+    "timestamp": "2025-12-10T21:30:32.258249",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 0,
+      "errors": [
+        "Scraper error: sequence item 9: expected str instance, NoneType found"
+      ]
+    },
+    "duration_seconds": 0.0,
+    "data_file": "tep_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "4ca67653-8c50-4658-9fb1-a2191e751255",
+    "timestamp": "2025-12-10T21:30:32.261871",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 68,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 242,
+      "errors": [
+        "Scraper error: sequence item 9: expected str instance, NoneType found"
+      ]
+    },
+    "duration_seconds": 0.06,
+    "data_file": "geo_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "05eeb487-524d-4def-9da3-41db22f5d520",
+    "timestamp": "2025-12-10T21:30:32.322098",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 10,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 51,
+      "errors": [
+        "Scraper error: sequence item 9: expected str instance, NoneType found"
+      ]
+    },
+    "duration_seconds": 0.03,
+    "data_file": "dep_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "59ce4813-0946-490e-b6a3-24ec50320b65",
+    "timestamp": "2025-12-10T21:30:32.350531",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 0,
+      "errors": [
+        "Scraper error: sequence item 9: expected str instance, NoneType found"
+      ]
+    },
+    "duration_seconds": 0.0,
+    "data_file": "gra_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "b63d45d9-8f5b-4efb-b52a-9f93b3be058f",
+    "timestamp": "2025-12-10T21:32:31.938965",
+    "status": "FAILED",
+    "metrics": {
+      "total_active_rechecked": 2145,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 0,
+      "errors": [
+        "'procurement_number'"
+      ]
+    },
+    "duration_seconds": 1263.32,
+    "data_file": "nat_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "b9b41863-7a38-47ad-90ae-4e030b0199fb",
+    "timestamp": "2025-12-10T22:09:08.307143",
+    "status": "FAILED",
+    "metrics": {
+      "total_active_rechecked": 1238,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 0,
+      "errors": [
+        "'procurement_number'"
+      ]
+    },
+    "duration_seconds": 9.78,
+    "data_file": "con_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "f7cf0534-36d7-486c-93dc-5bd7b0e6d127",
+    "timestamp": "2025-12-10T22:09:18.176994",
+    "status": "FAILED",
+    "metrics": {
+      "total_active_rechecked": 2145,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 0,
+      "errors": [
+        "'procurement_number'"
+      ]
+    },
+    "duration_seconds": 980.92,
+    "data_file": "nat_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "7b002af5-580c-4809-ad61-0fd89577b357",
+    "timestamp": "2025-12-10T22:25:39.260509",
+    "status": "FAILED",
+    "metrics": {
+      "total_active_rechecked": 102,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 0,
+      "errors": [
+        "'procurement_number'"
+      ]
+    },
+    "duration_seconds": 57.44,
+    "data_file": "spa_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "de26c6ea-00ed-4f0a-9b7a-3574917735e5",
+    "timestamp": "2025-12-10T22:26:36.753846",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 0,
+      "errors": [
+        "Scraper error: sequence item 9: expected str instance, NoneType found"
+      ]
+    },
+    "duration_seconds": 0.0,
+    "data_file": "cnt_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "f03bddce-0ab0-4a68-875b-6c4b954fb69a",
+    "timestamp": "2025-12-10T22:26:36.758847",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 0,
+      "errors": [
+        "Scraper error: sequence item 9: expected str instance, NoneType found"
+      ]
+    },
+    "duration_seconds": 0.0,
+    "data_file": "mep_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "67965567-64cd-4837-bf6c-7fa1116baefb",
+    "timestamp": "2025-12-10T22:26:36.761330",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 0,
+      "errors": [
+        "Scraper error: sequence item 9: expected str instance, NoneType found"
+      ]
+    },
+    "duration_seconds": 0.0,
+    "data_file": "dap_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "2f626b96-5085-460f-a2e1-3d06f28a31a7",
+    "timestamp": "2025-12-10T22:26:36.764018",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 0,
+      "errors": [
+        "Scraper error: sequence item 9: expected str instance, NoneType found"
+      ]
+    },
+    "duration_seconds": 0.0,
+    "data_file": "tep_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "797d28ff-a4cd-41e3-8d54-be142da3f109",
+    "timestamp": "2025-12-10T22:26:36.767234",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 68,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 242,
+      "errors": [
+        "Scraper error: sequence item 9: expected str instance, NoneType found"
+      ]
+    },
+    "duration_seconds": 0.05,
+    "data_file": "geo_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "e84bde73-0a31-4ad9-bea0-260db363f144",
+    "timestamp": "2025-12-10T22:26:36.822902",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 10,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 51,
+      "errors": [
+        "Scraper error: sequence item 9: expected str instance, NoneType found"
+      ]
+    },
+    "duration_seconds": 0.03,
+    "data_file": "dep_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "b3ac0662-d3fa-4b69-b415-899358399e67",
+    "timestamp": "2025-12-10T22:26:36.855671",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 0,
+      "errors": [
+        "Scraper error: sequence item 9: expected str instance, NoneType found"
+      ]
+    },
+    "duration_seconds": 0.0,
+    "data_file": "gra_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "33421307-52a1-4b5f-8b34-af9f9eec21b5",
+    "timestamp": "2025-12-10T22:38:47.431710",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 1238,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 2248,
+      "errors": [
+        "Main scraper error: 2025-12-10 22:38:49,087 INFO tender_scraper - Navigating to https://tenders.procurement.gov.ge/public/?lang=ge\n2025-12-10 22:38:50,384 INFO tender_scraper - Applying date filters...\n2025-12-10 22:38:5"
+      ]
+    },
+    "duration_seconds": 9.6,
+    "data_file": "con_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "2ae7478a-401e-4bb0-a5df-ff86909c70b3",
+    "timestamp": "2025-12-10T22:42:05.896522",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 1238,
+      "status_changes_detected": 1892,
+      "new_tenders_added": 54374,
+      "total_tenders": 56622,
+      "errors": []
+    },
+    "duration_seconds": 12.28,
+    "data_file": "con_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "2ff865dd-3753-49b8-9224-9035f046608f",
+    "timestamp": "2025-12-10T22:42:18.301962",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 2145,
+      "status_changes_detected": 8540,
+      "new_tenders_added": 47726,
+      "total_tenders": 56266,
+      "errors": []
+    },
+    "duration_seconds": 24.2,
+    "data_file": "nat_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "6a5434fa-496c-4270-b59c-470f09e047af",
+    "timestamp": "2025-12-10T22:49:32.644195",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 4063,
+      "status_changes_detected": 56266,
+      "new_tenders_added": 0,
+      "total_tenders": 56622,
+      "errors": []
+    },
+    "duration_seconds": 13.93,
+    "data_file": "con_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "f16a957f-1046-445d-9f10-d7fb9ebd6415",
+    "timestamp": "2025-12-10T23:29:27.119283",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 4063,
+      "status_changes_detected": 56266,
+      "new_tenders_added": 27,
+      "total_tenders": 56649,
+      "errors": []
+    },
+    "duration_seconds": 37.95,
+    "data_file": "con_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "17967aba-04a9-47b9-bc8a-b9c5fc49e5f3",
+    "timestamp": "2025-12-10T23:32:08.781188",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 4090,
+      "status_changes_detected": 56293,
+      "new_tenders_added": 0,
+      "total_tenders": 56649,
+      "errors": []
+    },
+    "duration_seconds": 16.78,
+    "data_file": "con_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "1d2c7bba-ae6d-45a2-8465-7a00f33f163d",
+    "timestamp": "2025-12-10T23:32:25.749306",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 4063,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 56266,
+      "errors": [
+        "Main scraper error: 2025-12-10 23:32:28,273 INFO tender_scraper - Navigating to https://tenders.procurement.gov.ge/public/?lang=ge\n2025-12-10 23:32:30,005 INFO tender_scraper - Applying date filters...\n2025-12-10 23:32:3"
+      ]
+    },
+    "duration_seconds": 7.04,
+    "data_file": "nat_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "fa42463f-8208-4214-969e-67817f44342b",
+    "timestamp": "2025-12-14T09:57:27.360841",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 4072,
+      "status_changes_detected": 56293,
+      "new_tenders_added": 347,
+      "total_tenders": 56996,
+      "errors": []
+    },
+    "duration_seconds": 1820.4,
+    "data_file": "con_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "d09ed4f0-1b94-4a84-aa1f-d957b31fedc7",
+    "timestamp": "2025-12-14T10:27:47.924119",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 4045,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 56266,
+      "errors": [
+        "Main scraper error: 2025-12-14 10:30:04,099 INFO tender_scraper - Navigating to https://tenders.procurement.gov.ge/public/?lang=ge\n2025-12-14 10:30:05,927 INFO tender_scraper - Applying date filters...\n2025-12-14 10:30:0"
+      ]
+    },
+    "duration_seconds": 262.21,
+    "data_file": "nat_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "7a5740bb-4bd6-4194-be4e-09aab8938326",
+    "timestamp": "2025-12-14T10:32:10.203272",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 101,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 438,
+      "errors": [
+        "Main scraper error: 2025-12-14 10:32:24,934 INFO tender_scraper - Navigating to https://tenders.procurement.gov.ge/public/?lang=ge\n2025-12-14 10:32:26,610 INFO tender_scraper - Applying date filters...\n2025-12-14 10:32:2"
+      ]
+    },
+    "duration_seconds": 25.58,
+    "data_file": "spa_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "99e82a18-e702-45e7-91c3-ee64a0ca57e2",
+    "timestamp": "2025-12-14T10:32:35.785507",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 0,
+      "errors": [
+        "Main scraper error: 2025-12-14 10:32:41,590 INFO tender_scraper - Navigating to https://tenders.procurement.gov.ge/public/?lang=ge\n2025-12-14 10:32:43,258 INFO tender_scraper - Applying date filters...\n2025-12-14 10:32:4"
+      ]
+    },
+    "duration_seconds": 8.63,
+    "data_file": "cnt_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "f480d103-1018-48c0-b044-a4701ef7f222",
+    "timestamp": "2025-12-14T10:32:44.415611",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 0,
+      "errors": [
+        "Main scraper error: 2025-12-14 10:32:49,998 INFO tender_scraper - Navigating to https://tenders.procurement.gov.ge/public/?lang=ge\n2025-12-14 10:32:51,285 INFO tender_scraper - Applying date filters...\n2025-12-14 10:32:5"
+      ]
+    },
+    "duration_seconds": 69.6,
+    "data_file": "mep_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "00ec5817-59e3-43cc-9817-0db1c2006988",
+    "timestamp": "2025-12-14T10:33:54.014441",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 0,
+      "errors": [
+        "Main scraper error: 2025-12-14 10:33:58,369 INFO tender_scraper - Navigating to https://tenders.procurement.gov.ge/public/?lang=ge\n2025-12-14 10:34:00,123 INFO tender_scraper - Applying date filters...\n2025-12-14 10:34:0"
+      ]
+    },
+    "duration_seconds": 7.33,
+    "data_file": "dap_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "10cfe514-1b55-4766-8f95-18c84e7ecfc3",
+    "timestamp": "2025-12-14T10:34:01.347640",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 0,
+      "errors": [
+        "Main scraper error: 2025-12-14 10:34:05,209 INFO tender_scraper - Navigating to https://tenders.procurement.gov.ge/public/?lang=ge\n2025-12-14 10:34:06,863 INFO tender_scraper - Applying date filters...\n2025-12-14 10:34:0"
+      ]
+    },
+    "duration_seconds": 6.4,
+    "data_file": "tep_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "4a6755f3-f697-4d51-93a0-64c0e4da71e2",
+    "timestamp": "2025-12-14T10:34:07.753516",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 66,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 242,
+      "errors": [
+        "Main scraper error: 2025-12-14 10:34:11,687 INFO tender_scraper - Navigating to https://tenders.procurement.gov.ge/public/?lang=ge\n2025-12-14 10:34:13,251 INFO tender_scraper - Applying date filters...\n2025-12-14 10:34:1"
+      ]
+    },
+    "duration_seconds": 6.59,
+    "data_file": "geo_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "f32eb8a7-4575-4daa-9b03-49a81f501327",
+    "timestamp": "2025-12-14T10:34:55.655714",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 3689,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 56996,
+      "errors": [
+        "Main scraper error: 2025-12-14 10:35:01,007 INFO tender_scraper - Navigating to https://tenders.procurement.gov.ge/public/?lang=ge\n2025-12-14 10:35:02,256 INFO tender_scraper - Applying date filters...\n2025-12-14 10:35:0"
+      ]
+    },
+    "duration_seconds": 9.14,
+    "data_file": "con_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "00aae2d2-fdf0-498b-8407-da173b78ff13",
+    "timestamp": "2025-12-14T10:35:04.878524",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 4045,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 56266,
+      "errors": [
+        "Main scraper error: 2025-12-14 10:35:10,014 INFO tender_scraper - Navigating to https://tenders.procurement.gov.ge/public/?lang=ge\n2025-12-14 10:35:12,939 INFO tender_scraper - Applying date filters...\n2025-12-14 10:35:1"
+      ]
+    },
+    "duration_seconds": 10.48,
+    "data_file": "nat_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "dbea151a-9406-4731-8f18-4f67c51d239b",
+    "timestamp": "2025-12-14T10:35:15.450895",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 101,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 438,
+      "errors": [
+        "Main scraper error: 2025-12-14 10:35:19,854 INFO tender_scraper - Navigating to https://tenders.procurement.gov.ge/public/?lang=ge\n2025-12-14 10:35:21,752 INFO tender_scraper - Applying date filters...\n2025-12-14 10:35:2"
+      ]
+    },
+    "duration_seconds": 7.59,
+    "data_file": "spa_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "4b32e08c-35cf-4665-a545-697d745b18de",
+    "timestamp": "2025-12-14T10:35:23.045164",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 0,
+      "errors": [
+        "Main scraper error: 2025-12-14 10:35:26,703 INFO tender_scraper - Navigating to https://tenders.procurement.gov.ge/public/?lang=ge\n2025-12-14 10:35:28,256 INFO tender_scraper - Applying date filters...\n2025-12-14 10:35:2"
+      ]
+    },
+    "duration_seconds": 6.34,
+    "data_file": "cnt_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "08b0e151-9fe2-48bf-855a-031fda06334e",
+    "timestamp": "2025-12-14T10:35:29.390834",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 0,
+      "errors": [
+        "Main scraper error: 2025-12-14 10:35:33,165 INFO tender_scraper - Navigating to https://tenders.procurement.gov.ge/public/?lang=ge\n2025-12-14 10:35:34,622 INFO tender_scraper - Applying date filters...\n2025-12-14 10:35:3"
+      ]
+    },
+    "duration_seconds": 6.4,
+    "data_file": "mep_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "2c390fdb-b4f1-40d9-8d35-29306a6d0d15",
+    "timestamp": "2025-12-14T10:35:35.793537",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 0,
+      "errors": [
+        "Main scraper error: 2025-12-14 10:35:39,938 INFO tender_scraper - Navigating to https://tenders.procurement.gov.ge/public/?lang=ge\n2025-12-14 10:35:41,612 INFO tender_scraper - Applying date filters...\n2025-12-14 10:35:4"
+      ]
+    },
+    "duration_seconds": 7.22,
+    "data_file": "dap_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "0693f400-a1d0-46cc-a6f9-6151c2a077c3",
+    "timestamp": "2025-12-14T10:35:43.013903",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 0,
+      "errors": [
+        "Main scraper error: 2025-12-14 10:35:46,764 INFO tender_scraper - Navigating to https://tenders.procurement.gov.ge/public/?lang=ge\n2025-12-14 10:35:48,883 INFO tender_scraper - Applying date filters...\n2025-12-14 10:35:4"
+      ]
+    },
+    "duration_seconds": 7.0,
+    "data_file": "tep_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "21284845-c99f-4e1e-9d74-c1bf9da5a25e",
+    "timestamp": "2025-12-14T10:35:50.012068",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 66,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 242,
+      "errors": [
+        "Main scraper error: 2025-12-14 10:35:55,190 INFO tender_scraper - Navigating to https://tenders.procurement.gov.ge/public/?lang=ge\n2025-12-14 10:35:57,218 INFO tender_scraper - Applying date filters...\n2025-12-14 10:35:5"
+      ]
+    },
+    "duration_seconds": 8.36,
+    "data_file": "geo_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "b4ab9e56-56d2-4fd5-808b-3d8c0270a88d",
+    "timestamp": "2025-12-14T10:35:58.376772",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 10,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 51,
+      "errors": [
+        "Main scraper error: 2025-12-14 10:36:02,848 INFO tender_scraper - Navigating to https://tenders.procurement.gov.ge/public/?lang=ge\n2025-12-14 10:36:04,775 INFO tender_scraper - Applying date filters...\n2025-12-14 10:36:0"
+      ]
+    },
+    "duration_seconds": 7.51,
+    "data_file": "dep_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "0d1be320-4ca8-4fd4-8611-320dd68a6cdb",
+    "timestamp": "2025-12-14T10:36:05.889791",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 0,
+      "new_tenders_added": 0,
+      "total_tenders": 0,
+      "errors": [
+        "Main scraper error: 2025-12-14 10:36:09,638 INFO tender_scraper - Navigating to https://tenders.procurement.gov.ge/public/?lang=ge\n2025-12-14 10:36:11,132 INFO tender_scraper - Applying date filters...\n2025-12-14 10:36:1"
+      ]
+    },
+    "duration_seconds": 6.39,
+    "data_file": "gra_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "e9268180-4e32-4618-b0b2-25bb79d51224",
+    "timestamp": "2025-12-14T11:21:53.094887",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 10,
+      "new_tenders_added": 0,
+      "total_tenders": 56996,
+      "errors": []
+    },
+    "duration_seconds": 2.73,
+    "data_file": "con_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "647136f9-c14c-4456-91a6-c9e37407d754",
+    "timestamp": "2025-12-14T11:21:55.910559",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 0,
+      "new_tenders_added": 121,
+      "total_tenders": 56387,
+      "errors": []
+    },
+    "duration_seconds": 2.48,
+    "data_file": "nat_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "4bd1b61f-5fd5-4dc2-9ff2-23939c2ec3fa",
+    "timestamp": "2025-12-14T11:21:58.489452",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 0,
+      "new_tenders_added": 15,
+      "total_tenders": 453,
+      "errors": []
+    },
+    "duration_seconds": 0.24,
+    "data_file": "spa_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "cd08aaa8-83c6-44db-a4a7-5d0134a88f49",
+    "timestamp": "2025-12-14T11:21:58.734267",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 0,
+      "new_tenders_added": 3,
+      "total_tenders": 245,
+      "errors": []
+    },
+    "duration_seconds": 0.06,
+    "data_file": "geo_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "6138d7a2-88a6-4abc-bb52-a4ddcbbef8b3",
+    "timestamp": "2025-12-14T11:21:58.797369",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 0,
+      "new_tenders_added": 1,
+      "total_tenders": 52,
+      "errors": []
+    },
+    "duration_seconds": 0.03,
+    "data_file": "dep_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "4887f67a-9b2e-4274-b3d7-7b66dfc36c0b",
+    "timestamp": "2025-12-14T11:25:53.308974",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 10,
+      "new_tenders_added": 0,
+      "total_tenders": 56996,
+      "errors": []
+    },
+    "duration_seconds": 2.87,
+    "data_file": "con_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "f6a89d13-673c-4849-958a-d7ba540981b1",
+    "timestamp": "2025-12-14T11:25:56.261279",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 121,
+      "new_tenders_added": 0,
+      "total_tenders": 56387,
+      "errors": []
+    },
+    "duration_seconds": 2.68,
+    "data_file": "nat_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "323c2b87-1e78-4705-9842-f3d266cab392",
+    "timestamp": "2025-12-14T11:25:59.000943",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 15,
+      "new_tenders_added": 0,
+      "total_tenders": 453,
+      "errors": []
+    },
+    "duration_seconds": 0.23,
+    "data_file": "spa_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "426adc2f-e1b0-4224-b89a-858d9ec05139",
+    "timestamp": "2025-12-14T11:25:59.237375",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 3,
+      "new_tenders_added": 0,
+      "total_tenders": 245,
+      "errors": []
+    },
+    "duration_seconds": 0.06,
+    "data_file": "geo_detailed_tenders.jsonl",
+    "dry_run": false
+  },
+  {
+    "run_id": "b409d9d1-442d-4a4f-8912-df111ada6cf3",
+    "timestamp": "2025-12-14T11:25:59.303021",
+    "status": "SUCCESS",
+    "metrics": {
+      "total_active_rechecked": 0,
+      "status_changes_detected": 1,
+      "new_tenders_added": 0,
+      "total_tenders": 52,
+      "errors": []
+    },
+    "duration_seconds": 0.03,
+    "data_file": "dep_detailed_tenders.jsonl",
+    "dry_run": false
+  }
+]
