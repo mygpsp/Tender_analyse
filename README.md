@@ -48,6 +48,27 @@ npm run dev
 
 **Access:** Frontend at `http://localhost:3000`, Backend at `http://localhost:8000`
 
+## 📦 Repository
+
+**GitHub:** [https://github.com/mygpsp/Tender_analyse](https://github.com/mygpsp/Tender_analyse)
+
+### Cloning the Repository
+
+```bash
+git clone git@github.com:mygpsp/Tender_analyse.git
+cd Tender_analyse
+```
+
+### Pushing Changes
+
+```bash
+git add .
+git commit -m "Your commit message"
+git push origin main
+```
+
+**Note:** This repository uses SSH authentication. Ensure your SSH key is added to your GitHub account.
+
 ### 3. Main Workflows
 
 #### Scrape Tenders
